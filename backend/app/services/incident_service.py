@@ -1,4 +1,6 @@
 from typing import List, Optional
+from typing import Optional, Sequence
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -75,3 +77,37 @@ async def list_incidents_near(
         limit=limit,
         offset=offset,
     )
+
+class IncidentService:
+    """
+    Incident operations. Inject `incident_crud` implementing create/get/update/delete/list.
+    """
+
+    def __init__(self, db: AsyncSession, incident_crud=None):
+        self.db = db
+        self.incident_crud = incident_crud
+
+    async def create(self, incident_in):
+        if not self.incident_crud:
+            raise RuntimeError("incident_crud required")
+        return await self.incident_crud.create(self.db, obj_in=incident_in)
+
+    async def get(self, incident_id: int) -> Optional[object]:
+        if not self.incident_crud:
+            raise RuntimeError("incident_crud required")
+        return await self.incident_crud.get(self.db, id=incident_id)
+
+    async def update(self, incident_obj, obj_in):
+        if not self.incident_crud:
+            raise RuntimeError("incident_crud required")
+        return await self.incident_crud.update(self.db, db_obj=incident_obj, obj_in=obj_in)
+
+    async def delete(self, incident_id: int) -> Optional[object]:
+        if not self.incident_crud:
+            raise RuntimeError("incident_crud required")
+        return await self.incident_crud.delete(self.db, id=incident_id)
+
+    async def list_nearby(self, lat: float, lng: float, radius_meters: float) -> Sequence[object]:
+        if not self.incident_crud:
+            raise RuntimeError("incident_crud required")
+        return await self.incident_crud.list_nearby(self.db, lat=lat, lng=lng, radius_meters=radius_meters)

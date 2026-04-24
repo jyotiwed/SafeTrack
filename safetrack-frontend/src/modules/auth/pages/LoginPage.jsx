@@ -1,4 +1,3 @@
-// LoginPage.jsx or Login.jsx
 import AuthCard from "../components/AuthCard";
 import LoginForm from "../components/LoginForm";
 import Logo from "../components/Logo";

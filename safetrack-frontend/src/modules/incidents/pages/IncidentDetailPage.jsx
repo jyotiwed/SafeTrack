@@ -1,14 +1,46 @@
-// src/modules/incidents/pages/IncidentDetailPage.jsx
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { AlertOctagon, MapPin, Calendar, Edit, ImageIcon, ChevronLeft, Loader2, Activity } from "lucide-react";
-
+import {
+  AlertOctagon, MapPin, Calendar, ImageIcon,
+  ChevronLeft, ExternalLink, Copy, Clock,
+  User, Activity, Loader2, CheckCircle, AlertTriangle,
+  BarChart3, Brain, Truck
+} from "lucide-react";
 import { getIncident, updateIncident } from "../api/incidentsApi.js";
 import IncidentTasksPanel from "../../tasks/components/IncidentTasksPanel.jsx";
-import { PredictionsPanel as PredictionPanel } from "../../predictions/PredictionsPanel.jsx";
+import { PredictionsPanel as RiskPredictionPanel } from "../../predictions/PredictionsPanel.jsx";
 import { IncidentPredictionsPanel } from "../../incident-predictions/components/IncidentPredictionsPanel.jsx";
+import ResourceDemandForm from "../../resourcePredictions/ResourceDemandForm.jsx";
 
 const STATUS_VALUES = ["new", "verified", "in_progress", "resolved", "closed"];
+const SEV_STYLE = {
+  critical: { color: "#ef4444", bg: "rgba(239,68,68,0.10)", border: "rgba(239,68,68,0.25)", label: "CRITICAL" },
+  high:     { color: "#f97316", bg: "rgba(249,115,22,0.10)", border: "rgba(249,115,22,0.25)", label: "HIGH" },
+  medium:   { color: "#facc15", bg: "rgba(250,204,21,0.10)", border: "rgba(250,204,21,0.25)", label: "MEDIUM" },
+  low:      { color: "#4ade80", bg: "rgba(74,222,128,0.10)", border: "rgba(74,222,128,0.25)", label: "LOW" },
+  info:     { color: "#00c4ff", bg: "rgba(0,196,255,0.10)", border: "rgba(0,196,255,0.25)", label: "INFO" },
+};
+const STATUS_STYLE = {
+  new:         { color: "#00c4ff", bg: "rgba(0,196,255,0.10)", border: "rgba(0,196,255,0.25)" },
+  verified:    { color: "#4ade80", bg: "rgba(74,222,128,0.10)", border: "rgba(74,222,128,0.25)" },
+  in_progress: { color: "#f97316", bg: "rgba(249,115,22,0.10)", border: "rgba(249,115,22,0.25)" },
+  resolved:    { color: "#a78bfa", bg: "rgba(167,139,250,0.10)", border: "rgba(167,139,250,0.25)" },
+  closed:      { color: "rgba(228,228,231,0.4)", bg: "rgba(255,255,255,0.05)", border: "rgba(255,255,255,0.1)" },
+};
+const getSev = s => SEV_STYLE[s] || SEV_STYLE.info;
+const getStatus = s => STATUS_STYLE[s] || STATUS_STYLE.closed;
+
+function fmtDate(iso) {
+  if (!iso) return "—";
+  return new Date(iso).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" });
+}
+
+function normalizeUrl(url) {
+  if (!url) return "";
+  const trimmed = url.trim();
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed;
+  return `https://${trimmed}`;
+}
 
 export default function IncidentDetailPage() {
   const { incidentId } = useParams();
@@ -20,345 +52,279 @@ export default function IncidentDetailPage() {
   const [loadError, setLoadError] = useState(null);
   const [updating, setUpdating] = useState(false);
   const [updateError, setUpdateError] = useState(null);
+  const [copied, setCopied] = useState(false);
 
-  /* ---------------- Fetch Incident ---------------- */
   useEffect(() => {
-    if (!incidentId || Number.isNaN(numericId)) {
-      setLoadError("Invalid incident id in URL");
-      setLoading(false);
-      return;
-    }
-
+    if (!incidentId || Number.isNaN(numericId)) { setLoadError("Invalid incident ID"); setLoading(false); return; }
     let cancelled = false;
-
-    async function fetchIncident() {
-      setLoading(true);
-      setLoadError(null);
+    (async () => {
+      setLoading(true); setLoadError(null);
       try {
         const data = await getIncident(numericId);
-        if (!cancelled) {
-          setIncident(data);
-        }
+        if (!cancelled) setIncident(data);
       } catch (err) {
-        if (cancelled) return;
-        const detail = err?.response?.data?.detail;
-        setLoadError(
-          typeof detail === "string" ? detail : "Failed to load incident",
-        );
-      } finally {
-        if (!cancelled) {
-          setLoading(false);
-        }
-      }
-    }
-
-    fetchIncident();
-    return () => {
-      cancelled = true;
-    };
+        if (!cancelled) setLoadError("Failed to load incident");
+      } finally { if (!cancelled) setLoading(false); }
+    })();
+    return () => { cancelled = true; };
   }, [incidentId, numericId]);
-
-  /* ---------------- Handlers ---------------- */
-  function handleBack() {
-    navigate("/app/incidents");
-  }
 
   async function handleStatusChange(newStatus) {
     if (!incident || incident.status === newStatus) return;
-
-    setUpdating(true);
-    setUpdateError(null);
-
+    setUpdating(true); setUpdateError(null);
     try {
       const updated = await updateIncident(numericId, { status: newStatus });
       setIncident(updated);
     } catch (err) {
-      const detail = err?.response?.data?.detail;
-      setUpdateError(
-        typeof detail === "string" ? detail : "Failed to update status",
-      );
-    } finally {
-      setUpdating(false);
-    }
+      setUpdateError("Failed to update status");
+    } finally { setUpdating(false); }
   }
 
-  /* ---------------- States ---------------- */
-  if (loading) {
-    return (
-      <div className="space-y-6 p-4 sm:p-6">
-        <button
-          onClick={handleBack}
-          className="inline-flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-300 hover:underline"
-        >
-          <ChevronLeft className="h-4 w-4" />
-          Back to incidents
-        </button>
-        <div className="mt-4 h-48 animate-pulse rounded-xl border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-slate-950/70 p-6 flex items-center justify-center">
-          <Loader2 className="h-8 w-8 animate-spin text-cyan-500" />
-        </div>
+  function copyCoordinates() {
+    if (!incident?.latitude || !incident?.longitude) return;
+    navigator.clipboard.writeText(`${incident.latitude}, ${incident.longitude}`);
+    setCopied(true); setTimeout(() => setCopied(false), 2000);
+  }
+
+  const wrap = "min-h-screen bg-[#09090b] text-zinc-200 font-sans selection:bg-cyan-500/30";
+
+  if (loading) return (
+    <div className={wrap}>
+      <div className="flex h-screen items-center justify-center gap-3 font-mono text-sm text-zinc-500">
+        <Loader2 size={18} className="animate-spin text-cyan-400" /> Loading Incident Data...
       </div>
-    );
-  }
-
-  if (loadError) {
-    return (
-      <div className="space-y-6 p-4 sm:p-6">
-        <button
-          onClick={handleBack}
-          className="inline-flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-300 hover:underline"
-        >
-          <ChevronLeft className="h-4 w-4" />
-          Back to incidents
-        </button>
-        <div className="rounded-xl border border-red-500/40 bg-red-50 dark:bg-red-900/20 px-4 py-3 text-sm text-red-700 dark:text-red-300">
-          {loadError}
-        </div>
-      </div>
-    );
-  }
-
-  if (!incident) {
-    return (
-      <div className="space-y-6 p-4 sm:p-6">
-        <button
-          onClick={handleBack}
-          className="inline-flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-300 hover:underline"
-        >
-          <ChevronLeft className="h-4 w-4" />
-          Back to incidents
-        </button>
-        <p className="text-sm text-gray-600 dark:text-slate-300">Incident not found.</p>
-      </div>
-    );
-  }
-
-  /* ---------------- Render: top incident, middle tasks, bottom predictions ---------------- */
-  return (
-    <div className="space-y-8 p-4 sm:p-6">
-      <button
-        onClick={handleBack}
-        className="inline-flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-300 hover:underline"
-      >
-        <ChevronLeft className="h-4 w-4" />
-        Back to incidents
-      </button>
-
-      {updateError && (
-        <div className="rounded-xl border border-red-500/40 bg-red-50 dark:bg-red-900/20 px-4 py-3 text-sm text-red-700 dark:text-red-300">
-          {updateError}
-        </div>
-      )}
-
-      {/* TOP: Incident details frame */}
-      <section className="relative overflow-hidden rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-slate-950/80 p-6 shadow-lg">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(6,182,212,0.15)_0,_transparent_55%)] opacity-60" />
-
-        {/* header row */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-600/30 bg-cyan-50 dark:bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-200">
-              Incident #{incident.id}
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            </div>
-            <h1 className="mt-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-slate-50">
-              {incident.title}
-            </h1>
-            <p className="mt-2 text-sm text-gray-600 dark:text-slate-300">
-              Reported by User #{incident.reporter_id}
-            </p>
-          </div>
-
-          <div className="flex flex-col items-end gap-3">
-            <SeverityBadge severity={incident.severity} />
-            <StatusBadge status={incident.status} />
-          </div>
-        </div>
-
-        {/* meta row */}
-        <div className="mt-6 grid gap-4 text-sm text-gray-600 dark:text-slate-300 sm:grid-cols-3">
-          <div className="flex items-start gap-3">
-            <Calendar className="h-5 w-5 text-cyan-500" />
-            <div>
-              <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-slate-400">
-                Reported at
-              </p>
-              <p className="font-medium">{new Date(incident.created_at).toLocaleString()}</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <Edit className="h-5 w-5 text-cyan-500" />
-            <div>
-              <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-slate-400">
-                Last update
-              </p>
-              <p className="font-medium">{new Date(incident.updated_at).toLocaleString()}</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <Activity className="h-5 w-5 text-cyan-500" />
-            <div>
-              <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-slate-400">
-                Status
-              </p>
-              <p className="font-medium capitalize">{incident.status.replace("_", " ")}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* status + location */}
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-200">
-              Update Status
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-slate-400">
-              Select the current operational state for this incident.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {STATUS_VALUES.map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  onClick={() => handleStatusChange(s)}
-                  disabled={updating || incident.status === s}
-                  className={`rounded-full border px-4 py-2 text-sm uppercase tracking-wide transition-shadow ${
-                    incident.status === s
-                      ? "border-cyan-500 bg-cyan-50 dark:bg-cyan-500/20 text-cyan-700 dark:text-cyan-100 shadow-md"
-                      : "border-gray-300 dark:border-white/10 bg-gray-50 dark:bg-slate-900/60 text-gray-700 dark:text-slate-200 hover:border-cyan-500 hover:shadow-md"
-                  } disabled:cursor-not-allowed disabled:opacity-60`}
-                >
-                  {s.replace("_", " ")}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-200">
-              Location Details
-            </h3>
-            {incident.address && <p className="text-sm text-gray-600 dark:text-slate-300">{incident.address}</p>}
-            {incident.latitude != null && incident.longitude != null ? (
-              <p className="font-mono text-sm text-gray-500 dark:text-slate-400">
-                Lat: {incident.latitude}, Lng: {incident.longitude}
-              </p>
-            ) : (
-              <p className="text-sm text-gray-600 dark:text-slate-400">No coordinates provided.</p>
-            )}
-          </div>
-        </div>
-
-        {/* description */}
-        <div className="mt-8 space-y-4">
-          <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-200">
-            Description
-          </h3>
-          <p className="whitespace-pre-wrap text-sm leading-relaxed text-gray-700 dark:text-slate-50">
-            {incident.description}
-          </p>
-        </div>
-
-        {/* media */}
-        {incident.media_urls?.length > 0 && (
-          <div className="mt-8 space-y-4">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-200">
-              Attached Media
-            </h3>
-            <ul className="grid gap-3 text-sm text-cyan-600 dark:text-cyan-300 sm:grid-cols-2">
-              {incident.media_urls.map((url, idx) => (
-                <li key={idx}>
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex max-w-full items-center gap-3 truncate rounded-lg border border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 px-4 py-3 hover:bg-cyan-100 dark:hover:bg-cyan-500/20 transition-colors"
-                  >
-                    <ImageIcon className="h-5 w-5 shrink-0" />
-                    <span className="truncate">{url}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </section>
-
-      {/* MIDDLE: Tasks frame */}
-      <section className="rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-slate-950/80 p-6 shadow-lg">
-        <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-slate-200">
-          Linked Tasks
-        </h2>
-        <p className="mb-4 text-sm text-gray-600 dark:text-slate-400">
-          Track actions assigned to this incident in real time.
-        </p>
-        <IncidentTasksPanel incidentId={incident.id} />
-      </section>
-
-      {/* BOTTOM: Predictions frame */}
-      <section className="rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-slate-950/80 p-6 shadow-lg">
-        <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-slate-200">
-          Predictions
-        </h2>
-        <p className="mb-4 text-sm text-gray-600 dark:text-slate-400">
-          Stored model outputs and risk assessments for this incident.
-        </p>
-        <PredictionPanel incidentId={incident.id} />
-      </section>
-      <section className="rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-slate-950/80 p-6 shadow-lg">
-        <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-slate-200">
-         Incident Predictions  {/* Fixed typo: removed extra 'n' */}
-        </h2>
-              <p className="mb-4 text-sm text-gray-600 dark:text-slate-400">
-               Resource forecasts, severity predictions, and ML pipeline outputs.
-              </p>
-                <IncidentPredictionsPanel incidentId={incident.id} />
-             </section>
-
-
-      <h2></h2>
-
-
     </div>
   );
-}
 
-/* ---------------- Badges ---------------- */
-
-function SeverityBadge({ severity }) {
-  const base =
-    "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm uppercase tracking-wide border shadow-sm";
-
-  const map = {
-    critical: "border-red-600/60 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300",
-    high: "border-orange-600/60 bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300",
-    medium: "border-yellow-600/60 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300",
-    low: "border-emerald-600/60 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300",
-  };
-
-  return (
-    <span className={`${base} ${map[severity] || map.low}`}>
-      <AlertOctagon className="h-4 w-4" />
-      {severity}
-    </span>
+  if (loadError || !incident) return (
+    <div className={wrap}>
+      <div className="flex h-screen items-center justify-center gap-3 font-mono text-sm text-red-400">
+        <AlertOctagon size={18} /> {loadError}
+      </div>
+    </div>
   );
-}
 
-function StatusBadge({ status }) {
-  const base =
-    "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm uppercase tracking-wide border shadow-sm";
-
-  const map = {
-    new: "border-gray-600/60 bg-gray-50 dark:bg-gray-900/30 text-gray-700 dark:text-gray-300",
-    verified: "border-cyan-600/60 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300",
-    in_progress: "border-blue-600/60 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300",
-    resolved: "border-emerald-600/60 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300",
-    closed: "border-purple-600/60 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300",
-  };
+  const sevStyle = getSev(incident.severity);
+  const stStyle = getStatus(incident.status);
 
   return (
-    <span className={`${base} ${map[status] || map.new}`}>
-      <Activity className="h-4 w-4" />
-      {status.replace("_", " ")}
-    </span>
+    <div className={wrap}>
+      
+         <div className="mx-auto max-w-7xl px-6 pb-16 sm:px-8">
+        
+        {/* HEADER NAV */}
+        <div className="mb-8 flex items-center justify-between">
+          <button onClick={() => navigate("/app/incidents")}
+            className="group flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors hover:text-cyan-400">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 transition-colors group-hover:bg-cyan-400/10">
+              <ChevronLeft size={16} />
+            </div>
+            Back to Incidents
+          </button>
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-500">
+            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            SAFETRACK ICC LIVE
+          </div>
+        </div>
+
+        {/* ================= SECTION 1: INCIDENT HERO ================= */}
+        <section className="mb-12">
+          <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+            <div className="flex-1 space-y-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="font-mono text-xs font-bold tracking-widest text-zinc-500">INCIDENT #{incident.id}</span>
+                <span className="h-1 w-1 rounded-full bg-zinc-700"></span>
+                <span className="flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase transition-colors"
+                  style={{ color: sevStyle.color, borderColor: sevStyle.border, background: sevStyle.bg }}>
+                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: sevStyle.color }} /> {sevStyle.label}
+                </span>
+                <span className="flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase transition-colors"
+                  style={{ color: stStyle.color, borderColor: stStyle.border, background: stStyle.bg }}>
+                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: stStyle.color }} /> {incident.status.replace("_", " ")}
+                </span>
+              </div>
+              
+              <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl">{incident.title}</h1>
+              
+              <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-400">
+                <div className="flex items-center gap-2">
+                  <User size={14} className="text-zinc-600" />
+                  <span>Reported by <span className="text-zinc-300">User #{incident.reporter_id}</span></span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar size={14} className="text-zinc-600" />
+                  <span>{fmtDate(incident.created_at)}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock size={14} className="text-zinc-600" />
+                  <span>Updated {fmtDate(incident.updated_at)}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Status Actions */}
+            <div className="w-full md:w-auto">
+              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 backdrop-blur-sm">
+                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-zinc-500">Update Status</p>
+                <div className="flex flex-wrap gap-2">
+                  {STATUS_VALUES.map(s => {
+                    const style = getStatus(s);
+                    const isActive = incident.status === s;
+                    return (
+                      <button key={s} onClick={() => handleStatusChange(s)} disabled={updating || isActive}
+                        className={`rounded-lg px-3 py-1.5 text-xs font-bold capitalize transition-all ${isActive ? 'shadow-lg shadow-black/20' : 'hover:bg-white/5'}`}
+                        style={isActive ? { color: style.color, background: style.bg, borderColor: style.border, border: '1px solid' } : { color: '#71717a', border: '1px solid transparent' }}>
+                        {s.replace("_", " ")}
+                      </button>
+                    );
+                  })}
+                </div>
+                {updateError && <p className="mt-2 text-xs text-red-400">{updateError}</p>}
+              </div>
+            </div>
+          </div>
+
+          {/* Description & Location Row */}
+          <div className="mt-8 grid gap-8 lg:grid-cols-3">
+            <div className="lg:col-span-2 space-y-6">
+              <div>
+                <h3 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-zinc-500">
+                  <Activity size={14} /> Description
+                </h3>
+                <p className="rounded-xl bg-white/[0.02] p-5 text-base leading-relaxed text-zinc-300 border border-white/5">
+                  {incident.description || "No description provided."}
+                </p>
+              </div>
+              
+              {incident.media_urls?.length > 0 && (
+                <div>
+                  <h3 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-zinc-500">
+                    <ImageIcon size={14} /> Media Evidence
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {incident.media_urls.map((url, i) => (
+                      <a key={i} href={normalizeUrl(url)} target="_blank" rel="noreferrer"
+                        className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-400 transition-colors hover:border-cyan-400/50 hover:bg-cyan-400/10">
+                        <ExternalLink size={14} /> View Media {i + 1}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h3 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-zinc-500">
+                  <MapPin size={14} /> Location
+                </h3>
+                <div className="overflow-hidden rounded-xl border border-white/5 bg-white/[0.02] p-5">
+                  {incident.address && (
+                    <p className="mb-4 text-sm text-zinc-300">{incident.address}</p>
+                  )}
+                  {incident.latitude && incident.longitude && (
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between rounded-lg bg-black/20 p-2 font-mono text-xs text-zinc-400">
+                        <span>{incident.latitude}, {incident.longitude}</span>
+                        <button onClick={copyCoordinates} className="text-zinc-500 hover:text-white">
+                          <Copy size={12} />
+                        </button>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        <a href={`/app/incidents/map?lat=${incident.latitude}&lng=${incident.longitude}`} 
+                          className="flex items-center justify-center gap-2 rounded-lg bg-white/5 py-2 text-xs font-medium text-zinc-300 hover:bg-white/10">
+                          <MapPin size={12} /> Internal Map
+                        </a>
+                        <a href={`https://www.google.com/maps?q=${incident.latitude},${incident.longitude}`} target="_blank" rel="noreferrer"
+                          className="flex items-center justify-center gap-2 rounded-lg bg-white/5 py-2 text-xs font-medium text-zinc-300 hover:bg-white/10">
+                          <ExternalLink size={12} /> Google Maps
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="my-12 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        {/* ================= SECTION 2: TASKS ================= */}
+        <section className="mb-16 scroll-mt-24" id="tasks">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+              <CheckCircle size={20} />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-white">Linked Tasks</h2>
+              <p className="text-sm text-zinc-400">Manage follow-up actions and assignments</p>
+            </div>
+          </div>
+          <div className="rounded-2xl">
+            <IncidentTasksPanel incidentId={incident.id} />
+          </div>
+        </section>
+
+        <div className="my-12 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        {/* ================= SECTION 3: AI RISK PREDICTIONS ================= */}
+         <div className="mx-auto max-w-7xl px-6 pb-16 sm:px-8">
+        <section className="mb-16 scroll-mt-24" id="risk-predictions">
+          <div className="mb-6 flex items-center gap-3">
+             
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
+              <Brain size={20} />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-white">AI Risk Assessment</h2>
+              <p className="text-sm text-zinc-400">Real-time probability and confidence scoring</p>
+            </div>
+          </div>
+          <div className="rounded-2xl">
+            <RiskPredictionPanel incidentId={incident.id} />
+          </div>
+        </section>
+        </div>
+
+        <div className="my-12 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        {/* ================= SECTION 4: INCIDENT FORECAST (Charts) ================= */}
+        <section className="mb-16 scroll-mt-24" id="forecast">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10 text-orange-400">
+              <BarChart3 size={20} />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-white">Incident Forecast & Budget</h2>
+              <p className="text-sm text-zinc-400">Resource allocation and financial impact projection</p>
+            </div>
+          </div>
+          <div className="rounded-2xl">
+            <IncidentPredictionsPanel incidentId={incident.id} />
+          </div>
+        </section>
+
+        <div className="my-12 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        {/* ================= SECTION 5: RESOURCE DEMAND (Bottom) ================= */}
+        <section className="mb-24 scroll-mt-24" id="resource-demand">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-400">
+              <Truck size={20} />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-white">Resource Demand Simulator</h2>
+              <p className="text-sm text-zinc-400">Calculate logistics for hypothetical scenarios</p>
+            </div>
+          </div>
+          <div className="rounded-2xl">
+            <ResourceDemandForm incidentId={incident.id} />
+          </div>
+        </section>
+        </div>
+
+      </div>
+    
   );
 }

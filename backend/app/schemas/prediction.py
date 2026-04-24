@@ -1,8 +1,9 @@
 # app/schemas/prediction.py
-from datetime import datetime
-from typing import Optional
 
-from pydantic import BaseModel, Field, field_validator
+from datetime import datetime
+from typing import Any, Dict, Optional
+
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from app.models.prediction import RiskTypeEnum
 
@@ -17,7 +18,6 @@ class PredictionBase(BaseModel):
     @field_validator("risk_type", mode="before")
     @classmethod
     def normalize_risk_type(cls, v):
-        # accept case-insensitive strings like "FLOOD", "flood", "Flood"
         if isinstance(v, str):
             return RiskTypeEnum(v.lower())
         return v
@@ -39,5 +39,39 @@ class PredictionRead(PredictionBase):
     created_at: datetime
     updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+        
+class PointRiskRequest(BaseModel):
+    risk_type: RiskTypeEnum
+    latitude: float
+    longitude: float
+    features: Optional[Dict[str, Any]] = None  
+
+
+class PointRiskResponse(BaseModel):
+    risk_type: RiskTypeEnum
+    latitude: float
+    longitude: float
+    probability: float
+    
+class AreaRiskRequest(BaseModel):
+    risk_type: RiskTypeEnum
+    center_latitude: float
+    center_longitude: float
+    radius_km: float
+    features: Optional[Dict[str, Any]] = None 
+    
+class AreaRiskResponse(BaseModel):
+    risk_type: RiskTypeEnum
+    center_latitude: float
+    center_longitude: float
+    radius_km: float
+    average_probability: float
+                    
+class GridCell(BaseModel):
+    row: int
+    col: int
+    latitude: float
+    longitude: float
+       
+        

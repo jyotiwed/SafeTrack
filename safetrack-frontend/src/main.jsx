@@ -8,6 +8,7 @@ import { IncidentNotifications } from "./modules/Notifications/IncidentNotificat
 import { router } from "./router";
 import "./index.css";
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   // no StrictMode to avoid double websocket in dev
   <NotificationsProvider>
@@ -15,4 +16,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* Optional toast overlay; remove if you want only bell & center */}
     <IncidentNotifications />
   </NotificationsProvider>
+ 
 );

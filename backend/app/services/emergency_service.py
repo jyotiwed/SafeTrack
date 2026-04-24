@@ -8,7 +8,7 @@ from app.crud.emergency_contact import (
 )
 from app.models.emergency_contact import EmergencyContact
 from app.schemas.emergency import EmergencyContactCreate, EmergencyTriggerRequest
-from app.core.redis import redis_client
+from app.core import redis as core_redis
 
 
 EMERGENCY_CHANNEL = "emergency:sos"
@@ -37,7 +37,7 @@ async def trigger_emergency(
     Publish an SOS event for this user. Frontend / external services
     can listen on EMERGENCY_CHANNEL to notify contacts, etc.
     """
-    if redis_client is None:
+    if core_redis.redis_client is None:
         return
 
     payload = {
@@ -51,7 +51,7 @@ async def trigger_emergency(
     import json
 
     try:
-        await redis_client.publish(EMERGENCY_CHANNEL, json.dumps(payload))
+        await core_redis.redis_client.publish(EMERGENCY_CHANNEL, json.dumps(payload))
     except Exception:
         return
 
@@ -79,3 +79,37 @@ async def delete_user_contact(
     user_id: int,
 ) -> bool:
     return await crud_delete_contact(db, contact_id, user_id)
+
+# emergency_service.py
+from typing import Optional, Sequence
+from sqlalchemy.ext.asyncio import AsyncSession
+
+class EmergencyService:
+    """
+    Handles emergency contacts and notifications. Inject `contact_crud` and optional `notifier` client.
+    """
+
+    def __init__(self, db: AsyncSession, contact_crud=None, notifier=None):
+        self.db = db
+        self.contact_crud = contact_crud
+        self.notifier = notifier
+
+    async def add_contact(self, contact_in):
+        if not self.contact_crud:
+            raise RuntimeError("contact_crud required")
+        return await self.contact_crud.create(self.db, obj_in=contact_in)
+
+    async def list_contacts_for_user(self, user_id: int) -> Sequence[object]:
+        if not self.contact_crud:
+            raise RuntimeError("contact_crud required")
+        return await self.contact_crud.list_for_user(self.db, user_id=user_id)
+
+    async def alert_contacts(self, user_id: int, message: str) -> int:
+        contacts = await self.list_contacts_for_user(user_id)
+        sent = 0
+        if not self.notifier:
+            raise RuntimeError("notifier client required to send alerts")
+        for c in contacts:
+            await self.notifier.send(contact=c, message=message)
+            sent += 1
+        return sent

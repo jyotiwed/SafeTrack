@@ -32,17 +32,26 @@ def _load_resource_model():
 
 
 def _build_feature_array(req: ResourceDemandRequest) -> np.ndarray:
+    # Map severity string to numeric score expected by model
+    severity_map = {"low": 0, "medium": 1, "high": 2, "critical": 3}
+    severity_score = severity_map.get(req.severity.lower(), 1)  # default to medium=1
+
     feats = [
         req.affected_population,
         req.area_km2,
+        severity_score,
     ]
+
+    # Include any extra numeric features if provided
     if req.features:
         for key in sorted(req.features.keys()):
             try:
                 feats.append(float(req.features[key]))
             except (TypeError, ValueError):
                 continue
+
     return np.array(feats, dtype=float).reshape(1, -1)
+
 
 
 def predict_resource_demand(
@@ -62,3 +71,4 @@ def predict_resource_demand(
         boats_needed=max(0, boats),
         ambulances_needed=max(0, ambulances),
     )
+

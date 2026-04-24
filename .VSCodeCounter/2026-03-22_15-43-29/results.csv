@@ -1,0 +1,204 @@
+"filename", "language", "Python", "JavaScript", "JSON", "HTML", "PostCSS", "JavaScript JSX", "XML", "Markdown", "Dotenv", "pip requirements", "Ini", "CSV", "comment", "blank", "total"
+"c:\Users\jyoti\emergecy\backend\.env", "Dotenv", 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 16, 32
+"c:\Users\jyoti\emergecy\backend\Earthquakes.csv", "CSV", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17806, 0, 1, 17807
+"c:\Users\jyoti\emergecy\backend\alembic.ini", "Ini", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 92, 0, 0, 25, 117
+"c:\Users\jyoti\emergecy\backend\alembic\env.py", "Python", 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 21, 84
+"c:\Users\jyoti\emergecy\backend\alembic\versions\978b8fc1ebc3_initial.py", "Python", 183, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 10, 205
+"c:\Users\jyoti\emergecy\backend\alembic\versions\f52c7af886b2_initial_schema.py", "Python", 183, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 11, 213
+"c:\Users\jyoti\emergecy\backend\app\api\v1\api_router.py", "Python", 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15, 44
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\__init__.py", "Python", 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 33
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\analytics.py", "Python", 43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 53
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\auth.py", "Python", 72, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13, 86
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\emergency.py", "Python", 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 87
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\geospatial.py", "Python", 86, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 18, 105
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\incident_predictions.py", "Python", 137, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 21, 182
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\incidents.py", "Python", 114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 17, 144
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\predictions.py", "Python", 104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 17, 138
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\preparedness.py", "Python", 92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14, 107
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\realtime.py", "Python", 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 24, 122
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\resource_predictions.py", "Python", 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 28
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\tasks.py", "Python", 107, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 119
+"c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\users.py", "Python", 93, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 18, 112
+"c:\Users\jyoti\emergecy\backend\app\core\config.py", "Python", 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 40
+"c:\Users\jyoti\emergecy\backend\app\core\dependencies.py", "Python", 93, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 22, 119
+"c:\Users\jyoti\emergecy\backend\app\core\redis.py", "Python", 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 35
+"c:\Users\jyoti\emergecy\backend\app\core\security.py", "Python", 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 23, 90
+"c:\Users\jyoti\emergecy\backend\app\crud\emergency_contact.py", "Python", 93, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 29, 129
+"c:\Users\jyoti\emergecy\backend\app\crud\guideline.py", "Python", 82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 22, 110
+"c:\Users\jyoti\emergecy\backend\app\crud\incident.py", "Python", 126, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 29, 167
+"c:\Users\jyoti\emergecy\backend\app\crud\incident_prediction.py", "Python", 149, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 32, 197
+"c:\Users\jyoti\emergecy\backend\app\crud\prediction.py", "Python", 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 33, 143
+"c:\Users\jyoti\emergecy\backend\app\crud\task.py", "Python", 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 23, 112
+"c:\Users\jyoti\emergecy\backend\app\crud\user.py", "Python", 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 26, 95
+"c:\Users\jyoti\emergecy\backend\app\database\base.py", "Python", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 7
+"c:\Users\jyoti\emergecy\backend\app\database\init_db.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 18
+"c:\Users\jyoti\emergecy\backend\app\database\session.py", "Python", 53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 17, 81
+"c:\Users\jyoti\emergecy\backend\app\main.py", "Python", 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 25, 82
+"c:\Users\jyoti\emergecy\backend\app\models\emergency_contact.py", "Python", 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 26
+"c:\Users\jyoti\emergecy\backend\app\models\guideline.py", "Python", 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16, 73
+"c:\Users\jyoti\emergecy\backend\app\models\incident.py", "Python", 84, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 22, 110
+"c:\Users\jyoti\emergecy\backend\app\models\incident_prediction.py", "Python", 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 14, 69
+"c:\Users\jyoti\emergecy\backend\app\models\prediction.py", "Python", 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14, 67
+"c:\Users\jyoti\emergecy\backend\app\models\task.py", "Python", 59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 75
+"c:\Users\jyoti\emergecy\backend\app\models\user.py", "Python", 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 9, 41
+"c:\Users\jyoti\emergecy\backend\app\schemas\analytics.py", "Python", 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 27
+"c:\Users\jyoti\emergecy\backend\app\schemas\auth.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"c:\Users\jyoti\emergecy\backend\app\schemas\emergency.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 28
+"c:\Users\jyoti\emergecy\backend\app\schemas\geospatial.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 20
+"c:\Users\jyoti\emergecy\backend\app\schemas\incident.py", "Python", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11, 41
+"c:\Users\jyoti\emergecy\backend\app\schemas\incident_prediction.py", "Python", 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 10, 41
+"c:\Users\jyoti\emergecy\backend\app\schemas\prediction.py", "Python", 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 22, 78
+"c:\Users\jyoti\emergecy\backend\app\schemas\preparedness.py", "Python", 47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 67
+"c:\Users\jyoti\emergecy\backend\app\schemas\resource_prediction.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 18
+"c:\Users\jyoti\emergecy\backend\app\schemas\task.py", "Python", 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 55
+"c:\Users\jyoti\emergecy\backend\app\schemas\user.py", "Python", 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 23, 61
+"c:\Users\jyoti\emergecy\backend\app\scripts\create_test_db.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 21
+"c:\Users\jyoti\emergecy\backend\app\services\analytics_service.py", "Python", 106, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 26, 145
+"c:\Users\jyoti\emergecy\backend\app\services\auth_service.py", "Python", 86, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 22, 117
+"c:\Users\jyoti\emergecy\backend\app\services\emergency_service.py", "Python", 82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 24, 115
+"c:\Users\jyoti\emergecy\backend\app\services\geospatial_service.py", "Python", 59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 16, 80
+"c:\Users\jyoti\emergecy\backend\app\services\incident_ml_service.py", "Python", 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 19, 72
+"c:\Users\jyoti\emergecy\backend\app\services\incident_service.py", "Python", 88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 22, 113
+"c:\Users\jyoti\emergecy\backend\app\services\ml_service.py", "Python", 227, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 55, 307
+"c:\Users\jyoti\emergecy\backend\app\services\notification_service.py", "Python", 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 13, 51
+"c:\Users\jyoti\emergecy\backend\app\services\preparedness_service.py", "Python", 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 18, 95
+"c:\Users\jyoti\emergecy\backend\app\services\resource_ml_service.py", "Python", 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 21, 75
+"c:\Users\jyoti\emergecy\backend\app\services\task_service.py", "Python", 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 88
+"c:\Users\jyoti\emergecy\backend\app\services\user_service.py", "Python", 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 15, 75
+"c:\Users\jyoti\emergecy\backend\app\utils\clustering.py", "Python", 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 7, 52
+"c:\Users\jyoti\emergecy\backend\app\utils\geospatial.py", "Python", 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 10, 49
+"c:\Users\jyoti\emergecy\backend\app\utils\incident_events.py", "Python", 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 29
+"c:\Users\jyoti\emergecy\backend\app\utils\realtime_manager.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15
+"c:\Users\jyoti\emergecy\backend\flood_risk_dataset_india.csv", "CSV", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10001, 0, 1, 10002
+"c:\Users\jyoti\emergecy\backend\ibtracs.NI.list.v04r00.csv", "CSV", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60458, 0, 1, 60459
+"c:\Users\jyoti\emergecy\backend\migrations\env.py", "Python", 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 16, 79
+"c:\Users\jyoti\emergecy\backend\ml_models\__init__.py", "Python", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"c:\Users\jyoti\emergecy\backend\ml_models\model_loader.py", "Python", 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 10, 41
+"c:\Users\jyoti\emergecy\backend\pytest.ini", "Ini", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 0, 0, 6, 41
+"c:\Users\jyoti\emergecy\backend\requirements.txt", "pip requirements", 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 19
+"c:\Users\jyoti\emergecy\backend\scripts\test_load_flood_model.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12
+"c:\Users\jyoti\emergecy\backend\scripts\train_cyclone_model.py", "Python", 113, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 44, 179
+"c:\Users\jyoti\emergecy\backend\scripts\train_earthquake_model.py", "Python", 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 43, 190
+"c:\Users\jyoti\emergecy\backend\scripts\train_flood_model.py", "Python", 85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 104
+"c:\Users\jyoti\emergecy\backend\scripts\train_incident_severity_model.py", "Python", 95, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 26, 132
+"c:\Users\jyoti\emergecy\backend\scripts\train_resource_demand_model.py", "Python", 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 24, 94
+"c:\Users\jyoti\emergecy\backend\tests\__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\jyoti\emergecy\backend\tests\conftest.py", "Python", 182, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 75, 257
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_emergency_contact_crud.py", "Python", 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 15, 121
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_guideline_crud.py", "Python", 107, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 18, 137
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_incident_crud.py", "Python", 133, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 19, 161
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_incident_prediction_crud.py", "Python", 92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 13, 111
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_prediction_crud.py", "Python", 96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 14, 116
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_task_crud.py", "Python", 114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 18, 139
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_user_crud.py", "Python", 129, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 17, 154
+"c:\Users\jyoti\emergecy\backend\tests\integration_testing\conftest.py", "Python", 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 32, 120
+"c:\Users\jyoti\emergecy\backend\tests\integration_testing\test_integration_api.py", "Python", 114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 24, 148
+"c:\Users\jyoti\emergecy\backend\tests\ml_models\test_ml_models.py", "Python", 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 67
+"c:\Users\jyoti\emergecy\backend\tests\models\test_models.py", "Python", 68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 14, 86
+"c:\Users\jyoti\emergecy\backend\tests\services\test_analytics_service.py", "Python", 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 55
+"c:\Users\jyoti\emergecy\backend\tests\services\test_auth_service.py", "Python", 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 19, 81
+"c:\Users\jyoti\emergecy\backend\tests\services\test_emergency_service.py", "Python", 71, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 13, 89
+"c:\Users\jyoti\emergecy\backend\tests\services\test_geospatial_service.py", "Python", 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 14, 88
+"c:\Users\jyoti\emergecy\backend\tests\services\test_incident_service.py", "Python", 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 16, 114
+"c:\Users\jyoti\emergecy\backend\tests\services\test_ml_service.py", "Python", 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 50
+"c:\Users\jyoti\emergecy\backend\tests\services\test_prediction_service.py", "Python", 109, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 19, 139
+"c:\Users\jyoti\emergecy\backend\tests\services\test_user_service.py", "Python", 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 15, 92
+"c:\Users\jyoti\emergecy\package-lock.json", "JSON", 0, 0, 618, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 619
+"c:\Users\jyoti\emergecy\package.json", "JSON", 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"c:\Users\jyoti\emergecy\safetrack-frontend\.env", "Dotenv", 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"c:\Users\jyoti\emergecy\safetrack-frontend\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 9, 19
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\api.js.html", "HTML", 0, 0, 0, 664, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 679
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\base.css", "PostCSS", 0, 0, 0, 0, 203, 0, 0, 0, 0, 0, 0, 0, 9, 13, 225
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\block-navigation.js", "JavaScript", 0, 66, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 15, 88
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\coverage-final.json", "JSON", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\helpers.js.html", "HTML", 0, 0, 0, 893, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 907
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\index.html", "HTML", 0, 0, 0, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 131
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\prettify.css", "PostCSS", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\prettify.js", "JavaScript", 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3
+"c:\Users\jyoti\emergecy\safetrack-frontend\coverage\sorter.js", "JavaScript", 0, 171, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 19, 211
+"c:\Users\jyoti\emergecy\safetrack-frontend\eslint.config.js", "JavaScript", 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 30
+"c:\Users\jyoti\emergecy\safetrack-frontend\index.html", "HTML", 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"c:\Users\jyoti\emergecy\safetrack-frontend\package-lock.json", "JSON", 0, 0, 6299, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6300
+"c:\Users\jyoti\emergecy\safetrack-frontend\package.json", "JSON", 0, 0, 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 68
+"c:\Users\jyoti\emergecy\safetrack-frontend\postcss.config.cjs", "JavaScript", 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\jyoti\emergecy\safetrack-frontend\public\vite.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\App.css", "PostCSS", 0, 0, 0, 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 6, 43
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\App.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 175, 0, 0, 0, 0, 0, 0, 10, 22, 207
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\assets\react.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\index.css", "PostCSS", 0, 0, 0, 0, 84, 0, 0, 0, 0, 0, 0, 0, 0, 31, 115
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\layouts\AuthLayout.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 48, 0, 0, 0, 0, 0, 0, 5, 15, 68
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\layouts\DashboardLayout.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 150, 0, 0, 0, 0, 0, 0, 13, 22, 185
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\lib\apiClient.js", "JavaScript", 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 14
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\main.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 3, 4, 21
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\IncidentNotifications.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 109, 0, 0, 0, 0, 0, 0, 11, 18, 138
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\NotificationsBell.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 3, 4, 34
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\NotificationsCenter.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 176, 0, 0, 0, 0, 0, 0, 13, 25, 214
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\NotificationsContext.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 133, 0, 0, 0, 0, 0, 0, 1, 25, 159
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\analytics\api\analyticsApi.js", "JavaScript", 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 20
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\analytics\pages\AnalyticsDashboardPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 344, 0, 0, 0, 0, 0, 0, 0, 31, 375
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\api\authApi.js", "JavaScript", 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 6, 35
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\api\emailApi.js", "JavaScript", 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 14
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\AuthCard.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 1, 0, 8
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\LoginForm.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 0, 0, 8, 112
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\Logo.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 2, 26
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\RegisterForm.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 307, 0, 0, 0, 0, 0, 0, 1, 28, 336
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\pages\LoginPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\pages\ProfilePage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 108, 0, 0, 0, 0, 0, 0, 2, 13, 123
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\pages\RegisterPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 4, 17
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\users\api\usersApi.js", "JavaScript", 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 26
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\common\pages\LandingPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 130, 0, 0, 0, 0, 0, 0, 6, 27, 163
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\common\pages\NotFoundPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 1, 26
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\dashboard\pages\HomePage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 503, 0, 0, 0, 0, 0, 0, 38, 49, 590
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\emergency\api\emergencyApi.js", "JavaScript", 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 27
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\emergency\pages\EmergencyContactsPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 231, 0, 0, 0, 0, 0, 0, 8, 23, 262
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\emergency\pages\SosTriggerPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 421, 0, 0, 0, 0, 0, 0, 17, 34, 472
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\geospartial\api\geospatialApi.js", "JavaScript", 0, 136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 18, 172
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\geospartial\components\GeospatialMap.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 392, 0, 0, 0, 0, 0, 0, 37, 45, 474
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\geospartial\pages\IncidentsMapPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 1, 2, 8
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\geospartial\styles\map.css", "PostCSS", 0, 0, 0, 0, 55, 0, 0, 0, 0, 0, 0, 0, 9, 11, 75
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incident-predictions\api\incidentPredictionsApi.js", "JavaScript", 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 67
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incident-predictions\components\IncidentPredictionsPanel.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 372, 0, 0, 0, 0, 0, 0, 9, 31, 412
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\api\incidentsApi.js", "JavaScript", 0, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 8, 73
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\components\IncidentForm.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 298, 0, 0, 0, 0, 0, 0, 17, 29, 344
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\components\IncidentMapWithFeatures.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 226, 0, 0, 0, 0, 0, 0, 13, 29, 268
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentDetailPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 289, 0, 0, 0, 0, 0, 0, 8, 33, 330
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentMapPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 177, 0, 0, 0, 0, 0, 0, 6, 19, 202
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentsPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 281, 0, 0, 0, 0, 0, 0, 9, 26, 316
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentsRealtimeFeed.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 155, 0, 0, 0, 0, 0, 0, 6, 17, 178
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\NearbyIncidentsPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 185, 0, 0, 0, 0, 0, 0, 5, 12, 202
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\PredictionUtils.js", "JavaScript", 0, 49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7, 57
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\PredictionsPanel.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 256, 0, 0, 0, 0, 0, 0, 8, 18, 282
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\api\predictionsApi.js", "JavaScript", 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 46
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\useIncidentPredictions.js", "JavaScript", 0, 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 68
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\api\preparednessApi.js", "JavaScript", 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 28
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\components\CreateGuidelineForm.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 213, 0, 0, 0, 0, 0, 0, 16, 34, 263
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\pages\GuidelinesListPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 282, 0, 0, 0, 0, 0, 0, 12, 27, 321
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\pages\PersonalizedGuidelinesPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 329, 0, 0, 0, 0, 0, 0, 13, 25, 367
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\realtime\components\AutoRefreshComponent.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 1, 5, 33
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\realtime\components\RealtimeAlerts.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 51, 0, 0, 0, 0, 0, 0, 2, 5, 58
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\realtime\useIncidentsRealtime.js", "JavaScript", 0, 110, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 35, 147
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\resourcePredictions\ResourceDemandForm.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 257, 0, 0, 0, 0, 0, 0, 11, 22, 290
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\resourcePredictions\api\resourcePredictionApi.js", "JavaScript", 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 9
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\tasks\api\taskApi.js", "JavaScript", 0, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 52
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\tasks\components\IncidentTasksPanel.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 372, 0, 0, 0, 0, 0, 0, 23, 37, 432
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\tasks\pages\TasksPage.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 381, 0, 0, 0, 0, 0, 0, 19, 55, 455
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\router\RequireAuth.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 1, 3, 13
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\router\index.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 95, 0, 0, 0, 0, 0, 0, 0, 23, 118
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_auth_module.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 120, 0, 0, 0, 0, 0, 0, 4, 32, 156
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_dashboard_module.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 45, 0, 0, 0, 0, 0, 0, 12, 16, 73
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_emergency_module.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 127, 0, 0, 0, 0, 0, 0, 2, 36, 165
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_incident_module.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 38, 0, 0, 0, 0, 0, 0, 1, 8, 47
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_prediction_module.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 1, 4, 35
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_realtime_module.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 61, 0, 0, 0, 0, 0, 0, 8, 15, 84
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_task_module.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 143, 0, 0, 0, 0, 0, 0, 2, 43, 188
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\setup.js", "JavaScript", 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 33
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\utils\api.test.js", "JavaScript", 0, 346, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 129, 476
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\utils\helpers.test.js", "JavaScript", 0, 310, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 63, 374
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\utils\api.js", "JavaScript", 0, 162, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 32, 199
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\utils\fixLeafletIcons.js", "JavaScript", 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 10
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\utils\helpers.js", "JavaScript", 0, 222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 50, 275
+"c:\Users\jyoti\emergecy\safetrack-frontend\tailwind.config.cjs", "JavaScript", 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 60
+"c:\Users\jyoti\emergecy\safetrack-frontend\vite.config.js", "JavaScript", 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 23
+"c:\Users\jyoti\emergecy\safetrack-frontend\vitest.config.js", "JavaScript", 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 20
+"c:\Users\jyoti\emergecy\test_redis.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 17
+"Total", "-", 6669, 2118, 6998, 1686, 380, 8278, 2, 10, 19, 19, 127, 88265, 1028, 3292, 118891

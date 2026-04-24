@@ -1,5 +1,4 @@
-from typing import List, cast
-from shapely import points
+from typing import List
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -18,10 +17,6 @@ async def get_incident_points(
     incidents = result.scalars().all()
 
     points: List[MapPoint] = []
-
-    from typing import List, cast
-
-# ...
 
     for inc in incidents:
         lat = getattr(inc, "latitude", None)
@@ -55,3 +50,31 @@ async def get_incident_clusters(
 ) -> List[Cluster]:
     points = await get_incident_points(db, limit=limit)
     return cluster_points(points, zoom=zoom)
+
+# geospatial_service.py
+from typing import Tuple, Sequence
+from sqlalchemy.ext.asyncio import AsyncSession
+import math
+
+class GeospatialService:
+    """
+    Simple geospatial helpers. Doesn't depend on a specific GIS library.
+    """
+
+    def __init__(self, db: AsyncSession = None): # type: ignore
+        self.db = db
+
+    @staticmethod
+    def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+        # return meters
+        R = 6371000.0
+        phi1, phi2 = math.radians(lat1), math.radians(lat2)
+        dphi = math.radians(lat2 - lat1)
+        dlambda = math.radians(lon2 - lon1)
+        a = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        return R * c
+
+    async def points_within_radius(self, points: Sequence[Tuple[float, float]], center: Tuple[float, float], radius_m: float):
+        cx, cy = center
+        return [p for p in points if self.haversine_distance(cx, cy, p[0], p[1]) <= radius_m]

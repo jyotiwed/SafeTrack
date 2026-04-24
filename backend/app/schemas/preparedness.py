@@ -2,7 +2,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class GuidelinePhase(str, Enum):
@@ -29,8 +29,7 @@ class GuidelineBase(BaseModel):
 
 
 class GuidelineCreate(GuidelineBase):
-    # Optional region definition for future use
-    # For now, accept lat/lon bounding box; service can convert to polygon later.
+    author_id: int  
     min_latitude: float | None = None
     min_longitude: float | None = None
     max_latitude: float | None = None
@@ -51,8 +50,7 @@ class GuidelineRead(GuidelineBase):
     created_at: datetime
     updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class PersonalizationRequest(BaseModel):
@@ -61,7 +59,7 @@ class PersonalizationRequest(BaseModel):
     hazard_type: HazardType
     phase: GuidelinePhase = GuidelinePhase.BEFORE
     language_code: str = "en"
-    radius_meters: float = 50000  # 50 km default
+    radius_meters: float = 50000 
 
 
 class PersonalisedGuideline(GuidelineRead):

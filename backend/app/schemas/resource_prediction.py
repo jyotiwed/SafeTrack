@@ -6,7 +6,6 @@ class ResourceDemandRequest(BaseModel):
     severity: str
     affected_population: int = Field(ge=0)
     area_km2: float = Field(ge=0)
-    # Optional extra features
     features: dict | None = None
 
 

@@ -45,3 +45,31 @@ async def update_user_profile(
     await db.commit()
     await db.refresh(db_user)
     return db_user
+
+# user_service.py
+from typing import Optional
+from sqlalchemy.ext.asyncio import AsyncSession
+
+class UserService:
+    """
+    User-related operations. Inject `user_crud`.
+    """
+
+    def __init__(self, db: AsyncSession, user_crud=None):
+        self.db = db
+        self.user_crud = user_crud
+
+    async def get(self, user_id: int) -> Optional[object]:
+        if not self.user_crud:
+            raise RuntimeError("user_crud required")
+        return await self.user_crud.get(self.db, id=user_id)
+
+    async def update(self, user_obj, obj_in):
+        if not self.user_crud:
+            raise RuntimeError("user_crud required")
+        return await self.user_crud.update(self.db, db_obj=user_obj, obj_in=obj_in)
+
+    async def delete(self, user_id: int) -> Optional[object]:
+        if not self.user_crud:
+            raise RuntimeError("user_crud required")
+        return await self.user_crud.delete(self.db, id=user_id)

@@ -14,19 +14,21 @@ from app.api.v1.endpoints import (
     analytics,
     preparedness,
     emergency,
+    resource_predictions
+    
     
 )
 
 api_router = APIRouter()
 
 
-# Auth & users
 api_router.include_router(auth.router)
 api_router.include_router(users.router)
 api_router.include_router(incidents.router)
+api_router.include_router(resource_predictions.router)
 
 
-# Uncomment and include as you implement the other modules:
+
 api_router.include_router(tasks.router)
 api_router.include_router(geospatial.router)
 api_router.include_router(predictions.router)
@@ -37,4 +39,5 @@ api_router.include_router(realtime.router)
 api_router.include_router(analytics.router)
 api_router.include_router(preparedness.router)
 api_router.include_router(emergency.router)
+
 

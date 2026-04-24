@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = "development"
 
     DATABASE_URL: AnyUrl
+    TEST_DATABASE_URL: Optional[AnyUrl] = None  # ← ADD THIS
     REDIS_URL: AnyUrl
 
     JWT_SECRET_KEY: str
@@ -20,21 +21,20 @@ class Settings(BaseSettings):
 
     PASSWORD_HASH_ROUNDS: int = 12
 
-    # CORS
     BACKEND_CORS_ORIGINS: List[HttpUrl] | List[str] | str | None = None
 
-    # S3 / MinIO (optional)
     S3_ENDPOINT_URL: Optional[AnyUrl] = None
     S3_ACCESS_KEY_ID: Optional[str] = None
     S3_SECRET_ACCESS_KEY: Optional[str] = None
     S3_BUCKET_NAME: Optional[str] = None
     S3_USE_SSL: bool = False
-
+    
+    
     class Config:
         env_file = ".env"
         case_sensitive = True
 
 
-@lru_cache
+@lru_cache()
 def get_settings() -> Settings:
     return Settings()

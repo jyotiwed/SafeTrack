@@ -13,9 +13,8 @@ class IncidentStatsResponse(BaseModel):
     total_incidents: int
     open_incidents: int
     closed_incidents: int
-    by_severity: dict  # {"low": 10, "medium": 5, "high": 2}
-    by_type: dict      # {"flood": 8, "fire": 3, ...}
-
+    by_severity: dict  
+    by_type: dict      
 
 class TaskStatsResponse(BaseModel):
     total_tasks: int

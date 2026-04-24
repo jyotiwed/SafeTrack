@@ -1,6 +1,5 @@
 // src/modules/predictions/PredictionUtils.js
 
-// Map backend RiskTypeEnum to labels
 export const RISK_TYPE_LABELS = {
   flood: "Flood",
   cyclone: "Cyclone",
@@ -8,8 +7,17 @@ export const RISK_TYPE_LABELS = {
   landslide: "Landslide",
   wildfire: "Wildfire",
 };
+export const RISK_COLORS = {
+  flood: "#3b82f6",      // Blue
+  cyclone: "#8b5cf6",    // Violet
+  earthquake: "#ef4444", // Red
+  landslide: "#f59e0b",  // Amber
+  wildfire: "#f97316",   // Orange
+};
+export function getRiskColor(riskType) {
+  return RISK_COLORS[riskType] || "#94a3b8"; // Default gray
+}
 
-// Visual bucket for probability
 export function probabilityToBadge(prob) {
   if (prob < 0.25) {
     return {
@@ -34,8 +42,6 @@ export function probabilityToBadge(prob) {
     cls: "bg-red-500/20 text-red-300 border-red-500/60",
   };
 }
-
-// Formatters used by IncidentPredictionsPanel
 export function formatProbability(prob) {
   if (prob == null) return "N/A";
   return `${(prob * 100).toFixed(1)}%`;
@@ -45,3 +51,6 @@ export function formatConfidence(conf) {
   if (conf == null) return "N/A";
   return `${(conf * 100).toFixed(1)}%`;
 }
+
+
+

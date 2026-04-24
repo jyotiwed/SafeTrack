@@ -78,3 +78,51 @@ async def delete_contact(
     await db.delete(contact)
     await db.commit()
     return True
+
+async def get_contact_by_id(
+    db: AsyncSession,
+    contact_id: int,
+) -> EmergencyContact:
+    result = await db.execute(
+        select(EmergencyContact).where(EmergencyContact.id == contact_id)
+    )
+    return result.scalar_one_or_none()
+
+
+class CRUDEmergencyContact:
+    """CRUD class for EmergencyContact model"""
+    
+    def __init__(self, model):
+        self.model = model
+    
+    async def create(self, db: AsyncSession, obj_in: EmergencyContactCreate, user_id: int = None, **kwargs) -> EmergencyContact: # type: ignore
+        """Create a new emergency contact"""
+        return await create_contact_for_user(db, user_id or 1, obj_in)
+    
+    async def get_by_user(self, db: AsyncSession, user_id: int) -> List[EmergencyContact]:
+        """Get all emergency contacts for a user"""
+        return await list_contacts_for_user(db, user_id)
+    
+    async def get(self, db: AsyncSession, id: int) -> EmergencyContact:
+        """Get emergency contact by ID"""
+        return await get_contact_by_id(db, id)
+    
+    async def update(self, db: AsyncSession, db_obj: EmergencyContact, obj_in: EmergencyContactCreate) -> EmergencyContact:
+        """Update emergency contact"""
+        return await update_contact(db, db_obj.id, db_obj.user_id, obj_in) # type: ignore
+    
+    async def remove(self, db: AsyncSession, id: int) -> bool:
+        """Delete emergency contact"""
+        contact = await get_contact_by_id(db, id)
+        if contact:
+            return await delete_contact(db, id, contact.user_id) # type: ignore
+        return False
+    
+    async def get_multi(self, db: AsyncSession, skip: int = 0, limit: int = 50) -> List[EmergencyContact]:
+        """Get multiple emergency contacts"""
+        result = await db.execute(select(EmergencyContact).offset(skip).limit(limit))
+        return list(result.scalars().all())
+
+
+
+

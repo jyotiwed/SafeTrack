@@ -1,0 +1,328 @@
+Date : 2026-03-19 19:43:14
+Directory : c:\Users\jyoti\emergecy
+Total : 201 files,  114045 codes, 1051 comments, 3224 blanks, all 118320 lines
+
+Languages
++------------------+------------+------------+------------+------------+------------+
+| language         | files      | code       | comment    | blank      | total      |
++------------------+------------+------------+------------+------------+------------+
+| CSV              |          3 |     88,265 |          0 |          3 |     88,268 |
+| JavaScript JSX   |         49 |      7,760 |        381 |        962 |      9,103 |
+| JSON             |          5 |      6,998 |          0 |          5 |      7,003 |
+| Python           |         98 |      6,671 |        562 |      1,639 |      8,872 |
+| JavaScript       |         29 |      2,108 |         90 |        452 |      2,650 |
+| HTML             |          4 |      1,686 |          0 |         45 |      1,731 |
+| PostCSS          |          5 |        380 |         18 |         62 |        460 |
+| Ini              |          2 |        127 |          0 |         31 |        158 |
+| Dotenv           |          2 |         19 |          0 |         16 |         35 |
+| pip requirements |          1 |         19 |          0 |          0 |         19 |
+| Markdown         |          1 |         10 |          0 |          9 |         19 |
+| XML              |          2 |          2 |          0 |          0 |          2 |
++------------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                   |        201 |    114,045 |      1,051 |      3,224 |    118,320 |
+| . (Files)                                                                                                           |          3 |        643 |          0 |          5 |        648 |
+| backend                                                                                                             |        104 |     95,084 |        562 |      1,686 |     97,332 |
+| backend (Files)                                                                                                     |          7 |     88,427 |          0 |         50 |     88,477 |
+| backend\alembic                                                                                                     |          3 |        422 |         38 |         42 |        502 |
+| backend\alembic (Files)                                                                                             |          1 |         56 |          7 |         21 |         84 |
+| backend\alembic\versions                                                                                            |          2 |        366 |         31 |         21 |        418 |
+| backend\app                                                                                                         |         64 |      3,875 |        271 |      1,039 |      5,185 |
+| backend\app (Files)                                                                                                 |          1 |         55 |          2 |         25 |         82 |
+| backend\app\api                                                                                                     |         14 |      1,090 |         69 |        199 |      1,358 |
+| backend\app\api\v1                                                                                                  |         14 |      1,090 |         69 |        199 |      1,358 |
+| backend\app\api\v1 (Files)                                                                                          |          1 |         28 |          1 |         13 |         42 |
+| backend\app\api\v1\endpoints                                                                                        |         13 |      1,062 |         68 |        186 |      1,316 |
+| backend\app\core                                                                                                    |          4 |        211 |         10 |         62 |        283 |
+| backend\app\crud                                                                                                    |          7 |        696 |         63 |        194 |        953 |
+| backend\app\database                                                                                                |          3 |         69 |         13 |         24 |        106 |
+| backend\app\models                                                                                                  |          7 |        345 |         17 |         99 |        461 |
+| backend\app\schemas                                                                                                 |         11 |        303 |          5 |        135 |        443 |
+| backend\app\scripts                                                                                                 |          1 |         16 |          2 |          3 |         21 |
+| backend\app\services                                                                                                |         12 |        983 |         78 |        272 |      1,333 |
+| backend\app\utils                                                                                                   |          4 |        107 |         12 |         26 |        145 |
+| backend\migrations                                                                                                  |          1 |         34 |         29 |         16 |         79 |
+| backend\ml_models                                                                                                   |          2 |         26 |          7 |         12 |         45 |
+| backend\scripts                                                                                                     |          6 |        486 |         65 |        160 |        711 |
+| backend\tests                                                                                                       |         21 |      1,814 |        152 |        367 |      2,333 |
+| backend\tests (Files)                                                                                               |          2 |        182 |          0 |         76 |        258 |
+| backend\tests\crud                                                                                                  |          7 |        770 |         64 |        109 |        943 |
+| backend\tests\integration_testing                                                                                   |          2 |        201 |         12 |         55 |        268 |
+| backend\tests\ml_models                                                                                             |          1 |         52 |          8 |          7 |         67 |
+| backend\tests\models                                                                                                |          1 |         68 |          4 |         14 |         86 |
+| backend\tests\services                                                                                              |          8 |        541 |         64 |        106 |        711 |
+| safetrack-frontend                                                                                                  |         94 |     18,318 |        489 |      1,533 |     20,340 |
+| safetrack-frontend (Files)                                                                                          |         10 |      6,521 |          1 |         22 |      6,544 |
+| safetrack-frontend\coverage                                                                                         |          9 |      2,118 |         38 |         94 |      2,250 |
+| safetrack-frontend\public                                                                                           |          1 |          1 |          0 |          0 |          1 |
+| safetrack-frontend\src                                                                                              |         74 |      9,678 |        450 |      1,417 |     11,545 |
+| safetrack-frontend\src (Files)                                                                                      |          4 |        310 |         13 |         63 |        386 |
+| safetrack-frontend\src\assets                                                                                       |          1 |          1 |          0 |          0 |          1 |
+| safetrack-frontend\src\layouts                                                                                      |          2 |        157 |         13 |         29 |        199 |
+| safetrack-frontend\src\lib                                                                                          |          1 |         10 |          0 |          4 |         14 |
+| safetrack-frontend\src\modules                                                                                      |         51 |      7,455 |        381 |        863 |      8,699 |
+| safetrack-frontend\src\modules\Notifications                                                                        |          4 |        445 |         29 |         71 |        545 |
+| safetrack-frontend\src\modules\analytics                                                                            |          2 |        359 |         20 |         37 |        416 |
+| safetrack-frontend\src\modules\analytics\api                                                                        |          1 |         15 |          1 |          4 |         20 |
+| safetrack-frontend\src\modules\analytics\pages                                                                      |          1 |        344 |         19 |         33 |        396 |
+| safetrack-frontend\src\modules\auth                                                                                 |          9 |        479 |         14 |         54 |        547 |
+| safetrack-frontend\src\modules\auth\api                                                                             |          1 |         26 |          3 |          6 |         35 |
+| safetrack-frontend\src\modules\auth\components                                                                      |          4 |        302 |          5 |         25 |        332 |
+| safetrack-frontend\src\modules\auth\pages                                                                           |          3 |        134 |          2 |         18 |        154 |
+| safetrack-frontend\src\modules\auth\users                                                                           |          1 |         17 |          4 |          5 |         26 |
+| safetrack-frontend\src\modules\auth\users\api                                                                       |          1 |         17 |          4 |          5 |         26 |
+| safetrack-frontend\src\modules\common                                                                               |          2 |        155 |          6 |         28 |        189 |
+| safetrack-frontend\src\modules\common\pages                                                                         |          2 |        155 |          6 |         28 |        189 |
+| safetrack-frontend\src\modules\dashboard                                                                            |          1 |        259 |         18 |         37 |        314 |
+| safetrack-frontend\src\modules\dashboard\pages                                                                      |          1 |        259 |         18 |         37 |        314 |
+| safetrack-frontend\src\modules\emergency                                                                            |          3 |        673 |         25 |         63 |        761 |
+| safetrack-frontend\src\modules\emergency\api                                                                        |          1 |         21 |          0 |          6 |         27 |
+| safetrack-frontend\src\modules\emergency\pages                                                                      |          2 |        652 |         25 |         57 |        734 |
+| safetrack-frontend\src\modules\geospartial                                                                          |          4 |        588 |         65 |         76 |        729 |
+| safetrack-frontend\src\modules\geospartial\api                                                                      |          1 |        136 |         18 |         18 |        172 |
+| safetrack-frontend\src\modules\geospartial\components                                                               |          1 |        392 |         37 |         45 |        474 |
+| safetrack-frontend\src\modules\geospartial\pages                                                                    |          1 |          5 |          1 |          2 |          8 |
+| safetrack-frontend\src\modules\geospartial\styles                                                                   |          1 |         55 |          9 |         11 |         75 |
+| safetrack-frontend\src\modules\incident-predictions                                                                 |          2 |        430 |          9 |         40 |        479 |
+| safetrack-frontend\src\modules\incident-predictions\api                                                             |          1 |         58 |          0 |          9 |         67 |
+| safetrack-frontend\src\modules\incident-predictions\components                                                      |          1 |        372 |          9 |         31 |        412 |
+| safetrack-frontend\src\modules\incidents                                                                            |          8 |      1,644 |         75 |        165 |      1,884 |
+| safetrack-frontend\src\modules\incidents\api                                                                        |          1 |         54 |         11 |          8 |         73 |
+| safetrack-frontend\src\modules\incidents\components                                                                 |          2 |        524 |         30 |         58 |        612 |
+| safetrack-frontend\src\modules\incidents\pages                                                                      |          5 |      1,066 |         34 |         99 |      1,199 |
+| safetrack-frontend\src\modules\predictions                                                                          |          4 |        403 |         16 |         38 |        457 |
+| safetrack-frontend\src\modules\predictions (Files)                                                                  |          3 |        366 |         15 |         30 |        411 |
+| safetrack-frontend\src\modules\predictions\api                                                                      |          1 |         37 |          1 |          8 |         46 |
+| safetrack-frontend\src\modules\preparedness                                                                         |          4 |        800 |         47 |         86 |        933 |
+| safetrack-frontend\src\modules\preparedness\api                                                                     |          1 |         23 |          1 |          4 |         28 |
+| safetrack-frontend\src\modules\preparedness\components                                                              |          1 |        213 |         16 |         34 |        263 |
+| safetrack-frontend\src\modules\preparedness\pages                                                                   |          2 |        564 |         30 |         48 |        642 |
+| safetrack-frontend\src\modules\realtime                                                                             |          3 |        188 |          5 |         45 |        238 |
+| safetrack-frontend\src\modules\realtime (Files)                                                                     |          1 |        110 |          2 |         35 |        147 |
+| safetrack-frontend\src\modules\realtime\components                                                                  |          2 |         78 |          3 |         10 |         91 |
+| safetrack-frontend\src\modules\resourcePredictions                                                                  |          2 |        263 |         11 |         25 |        299 |
+| safetrack-frontend\src\modules\resourcePredictions (Files)                                                          |          1 |        257 |         11 |         22 |        290 |
+| safetrack-frontend\src\modules\resourcePredictions\api                                                              |          1 |          6 |          0 |          3 |          9 |
+| safetrack-frontend\src\modules\tasks                                                                                |          3 |        769 |         41 |         98 |        908 |
+| safetrack-frontend\src\modules\tasks\api                                                                            |          1 |         41 |          5 |          6 |         52 |
+| safetrack-frontend\src\modules\tasks\components                                                                     |          1 |        347 |         17 |         37 |        401 |
+| safetrack-frontend\src\modules\tasks\pages                                                                          |          1 |        381 |         19 |         55 |        455 |
+| safetrack-frontend\src\router                                                                                       |          2 |        104 |          1 |         26 |        131 |
+| safetrack-frontend\src\tests                                                                                        |         10 |      1,248 |         34 |        349 |      1,631 |
+| safetrack-frontend\src\tests (Files)                                                                                |          1 |         28 |          2 |          3 |         33 |
+| safetrack-frontend\src\tests\modules                                                                                |          7 |        564 |         30 |        154 |        748 |
+| safetrack-frontend\src\tests\utils                                                                                  |          2 |        656 |          2 |        192 |        850 |
+| safetrack-frontend\src\utils                                                                                        |          3 |        393 |          8 |         83 |        484 |
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| filename                                                                                                            | language         | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| c:\Users\jyoti\emergecy\backend\.env                                                                                | Dotenv           |         16 |          0 |         16 |         32 |
+| c:\Users\jyoti\emergecy\backend\Earthquakes.csv                                                                     | CSV              |     17,806 |          0 |          1 |     17,807 |
+| c:\Users\jyoti\emergecy\backend\alembic.ini                                                                         | Ini              |         92 |          0 |         25 |        117 |
+| c:\Users\jyoti\emergecy\backend\alembic\env.py                                                                      | Python           |         56 |          7 |         21 |         84 |
+| c:\Users\jyoti\emergecy\backend\alembic\versions\978b8fc1ebc3_initial.py                                            | Python           |        183 |         12 |         10 |        205 |
+| c:\Users\jyoti\emergecy\backend\alembic\versions\f52c7af886b2_initial_schema.py                                     | Python           |        183 |         19 |         11 |        213 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\api_router.py                                                            | Python           |         28 |          1 |         13 |         42 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\__init__.py                                                    | Python           |         26 |          1 |          6 |         33 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\analytics.py                                                   | Python           |         43 |          0 |         10 |         53 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\auth.py                                                        | Python           |         72 |          1 |         13 |         86 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\emergency.py                                                   | Python           |         76 |          0 |         11 |         87 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\geospatial.py                                                  | Python           |         86 |          1 |         18 |        105 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\incident_predictions.py                                        | Python           |        137 |         24 |         21 |        182 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\incidents.py                                                   | Python           |        114 |         13 |         17 |        144 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\predictions.py                                                 | Python           |        104 |         17 |         17 |        138 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\preparedness.py                                                | Python           |         92 |          1 |         14 |        107 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\realtime.py                                                    | Python           |         89 |          9 |         24 |        122 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\resource_predictions.py                                        | Python           |         23 |          0 |          5 |         28 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\tasks.py                                                       | Python           |        107 |          0 |         12 |        119 |
+| c:\Users\jyoti\emergecy\backend\app\api\v1\endpoints\users.py                                                       | Python           |         93 |          1 |         18 |        112 |
+| c:\Users\jyoti\emergecy\backend\app\core\config.py                                                                  | Python           |         28 |          0 |         11 |         39 |
+| c:\Users\jyoti\emergecy\backend\app\core\dependencies.py                                                            | Python           |         93 |          4 |         22 |        119 |
+| c:\Users\jyoti\emergecy\backend\app\core\redis.py                                                                   | Python           |         27 |          2 |          6 |         35 |
+| c:\Users\jyoti\emergecy\backend\app\core\security.py                                                                | Python           |         63 |          4 |         23 |         90 |
+| c:\Users\jyoti\emergecy\backend\app\crud\emergency_contact.py                                                       | Python           |         93 |          7 |         29 |        129 |
+| c:\Users\jyoti\emergecy\backend\app\crud\guideline.py                                                               | Python           |         82 |          6 |         22 |        110 |
+| c:\Users\jyoti\emergecy\backend\app\crud\incident.py                                                                | Python           |        126 |         12 |         29 |        167 |
+| c:\Users\jyoti\emergecy\backend\app\crud\incident_prediction.py                                                     | Python           |        149 |         16 |         32 |        197 |
+| c:\Users\jyoti\emergecy\backend\app\crud\prediction.py                                                              | Python           |        102 |          8 |         33 |        143 |
+| c:\Users\jyoti\emergecy\backend\app\crud\task.py                                                                    | Python           |         83 |          6 |         23 |        112 |
+| c:\Users\jyoti\emergecy\backend\app\crud\user.py                                                                    | Python           |         61 |          8 |         26 |         95 |
+| c:\Users\jyoti\emergecy\backend\app\database\base.py                                                                | Python           |          2 |          1 |          4 |          7 |
+| c:\Users\jyoti\emergecy\backend\app\database\init_db.py                                                             | Python           |         14 |          1 |          3 |         18 |
+| c:\Users\jyoti\emergecy\backend\app\database\session.py                                                             | Python           |         53 |         11 |         17 |         81 |
+| c:\Users\jyoti\emergecy\backend\app\main.py                                                                         | Python           |         55 |          2 |         25 |         82 |
+| c:\Users\jyoti\emergecy\backend\app\models\emergency_contact.py                                                     | Python           |         18 |          0 |          8 |         26 |
+| c:\Users\jyoti\emergecy\backend\app\models\guideline.py                                                             | Python           |         56 |          1 |         16 |         73 |
+| c:\Users\jyoti\emergecy\backend\app\models\incident.py                                                              | Python           |         84 |          4 |         22 |        110 |
+| c:\Users\jyoti\emergecy\backend\app\models\incident_prediction.py                                                   | Python           |         45 |         10 |         14 |         69 |
+| c:\Users\jyoti\emergecy\backend\app\models\prediction.py                                                            | Python           |         52 |          1 |         14 |         67 |
+| c:\Users\jyoti\emergecy\backend\app\models\task.py                                                                  | Python           |         59 |          0 |         16 |         75 |
+| c:\Users\jyoti\emergecy\backend\app\models\user.py                                                                  | Python           |         31 |          1 |          9 |         41 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\analytics.py                                                            | Python           |         18 |          0 |          9 |         27 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\auth.py                                                                 | Python           |          5 |          0 |          2 |          7 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\emergency.py                                                            | Python           |         17 |          0 |         11 |         28 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\geospatial.py                                                           | Python           |         14 |          1 |          5 |         20 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\incident.py                                                             | Python           |         29 |          1 |         11 |         41 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\incident_prediction.py                                                  | Python           |         30 |          1 |         10 |         41 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\prediction.py                                                           | Python           |         55 |          1 |         22 |         78 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\preparedness.py                                                         | Python           |         47 |          0 |         20 |         67 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\resource_prediction.py                                                  | Python           |         13 |          0 |          5 |         18 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\task.py                                                                 | Python           |         38 |          0 |         17 |         55 |
+| c:\Users\jyoti\emergecy\backend\app\schemas\user.py                                                                 | Python           |         37 |          1 |         23 |         61 |
+| c:\Users\jyoti\emergecy\backend\app\scripts\create_test_db.py                                                       | Python           |         16 |          2 |          3 |         21 |
+| c:\Users\jyoti\emergecy\backend\app\services\analytics_service.py                                                   | Python           |        106 |         13 |         26 |        145 |
+| c:\Users\jyoti\emergecy\backend\app\services\auth_service.py                                                        | Python           |         86 |          9 |         22 |        117 |
+| c:\Users\jyoti\emergecy\backend\app\services\emergency_service.py                                                   | Python           |         82 |          9 |         24 |        115 |
+| c:\Users\jyoti\emergecy\backend\app\services\geospatial_service.py                                                  | Python           |         59 |          5 |         16 |         80 |
+| c:\Users\jyoti\emergecy\backend\app\services\incident_ml_service.py                                                 | Python           |         51 |          2 |         19 |         72 |
+| c:\Users\jyoti\emergecy\backend\app\services\incident_service.py                                                    | Python           |         88 |          3 |         22 |        113 |
+| c:\Users\jyoti\emergecy\backend\app\services\ml_service.py                                                          | Python           |        227 |         25 |         55 |        307 |
+| c:\Users\jyoti\emergecy\backend\app\services\notification_service.py                                                | Python           |         36 |          2 |         13 |         51 |
+| c:\Users\jyoti\emergecy\backend\app\services\preparedness_service.py                                                | Python           |         76 |          1 |         18 |         95 |
+| c:\Users\jyoti\emergecy\backend\app\services\resource_ml_service.py                                                 | Python           |         51 |          3 |         21 |         75 |
+| c:\Users\jyoti\emergecy\backend\app\services\task_service.py                                                        | Python           |         67 |          0 |         21 |         88 |
+| c:\Users\jyoti\emergecy\backend\app\services\user_service.py                                                        | Python           |         54 |          6 |         15 |         75 |
+| c:\Users\jyoti\emergecy\backend\app\utils\clustering.py                                                             | Python           |         40 |          5 |          7 |         52 |
+| c:\Users\jyoti\emergecy\backend\app\utils\geospatial.py                                                             | Python           |         33 |          6 |         10 |         49 |
+| c:\Users\jyoti\emergecy\backend\app\utils\incident_events.py                                                        | Python           |         24 |          1 |          4 |         29 |
+| c:\Users\jyoti\emergecy\backend\app\utils\realtime_manager.py                                                       | Python           |         10 |          0 |          5 |         15 |
+| c:\Users\jyoti\emergecy\backend\flood_risk_dataset_india.csv                                                        | CSV              |     10,001 |          0 |          1 |     10,002 |
+| c:\Users\jyoti\emergecy\backend\ibtracs.NI.list.v04r00.csv                                                          | CSV              |     60,458 |          0 |          1 |     60,459 |
+| c:\Users\jyoti\emergecy\backend\migrations\env.py                                                                   | Python           |         34 |         29 |         16 |         79 |
+| c:\Users\jyoti\emergecy\backend\ml_models\__init__.py                                                               | Python           |          2 |          0 |          2 |          4 |
+| c:\Users\jyoti\emergecy\backend\ml_models\model_loader.py                                                           | Python           |         24 |          7 |         10 |         41 |
+| c:\Users\jyoti\emergecy\backend\pytest.ini                                                                          | Ini              |         35 |          0 |          6 |         41 |
+| c:\Users\jyoti\emergecy\backend\requirements.txt                                                                    | pip requirements |         19 |          0 |          0 |         19 |
+| c:\Users\jyoti\emergecy\backend\scripts\test_load_flood_model.py                                                    | Python           |          8 |          0 |          4 |         12 |
+| c:\Users\jyoti\emergecy\backend\scripts\train_cyclone_model.py                                                      | Python           |        113 |         22 |         44 |        179 |
+| c:\Users\jyoti\emergecy\backend\scripts\train_earthquake_model.py                                                   | Python           |        124 |         23 |         43 |        190 |
+| c:\Users\jyoti\emergecy\backend\scripts\train_flood_model.py                                                        | Python           |         85 |          0 |         19 |        104 |
+| c:\Users\jyoti\emergecy\backend\scripts\train_incident_severity_model.py                                            | Python           |         95 |         11 |         26 |        132 |
+| c:\Users\jyoti\emergecy\backend\scripts\train_resource_demand_model.py                                              | Python           |         61 |          9 |         24 |         94 |
+| c:\Users\jyoti\emergecy\backend\tests\__init__.py                                                                   | Python           |          0 |          0 |          1 |          1 |
+| c:\Users\jyoti\emergecy\backend\tests\conftest.py                                                                   | Python           |        182 |          0 |         75 |        257 |
+| c:\Users\jyoti\emergecy\backend\tests\crud\test_emergency_contact_crud.py                                           | Python           |         99 |          7 |         15 |        121 |
+| c:\Users\jyoti\emergecy\backend\tests\crud\test_guideline_crud.py                                                   | Python           |        107 |         12 |         18 |        137 |
+| c:\Users\jyoti\emergecy\backend\tests\crud\test_incident_crud.py                                                    | Python           |        133 |          9 |         19 |        161 |
+| c:\Users\jyoti\emergecy\backend\tests\crud\test_incident_prediction_crud.py                                         | Python           |         92 |          8 |         12 |        112 |
+| c:\Users\jyoti\emergecy\backend\tests\crud\test_prediction_crud.py                                                  | Python           |         96 |          8 |         13 |        117 |
+| c:\Users\jyoti\emergecy\backend\tests\crud\test_task_crud.py                                                        | Python           |        114 |         10 |         16 |        140 |
+| c:\Users\jyoti\emergecy\backend\tests\crud\test_user_crud.py                                                        | Python           |        129 |         10 |         16 |        155 |
+| c:\Users\jyoti\emergecy\backend\tests\integration_testing\conftest.py                                               | Python           |         87 |          2 |         31 |        120 |
+| c:\Users\jyoti\emergecy\backend\tests\integration_testing\test_integration_api.py                                   | Python           |        114 |         10 |         24 |        148 |
+| c:\Users\jyoti\emergecy\backend\tests\ml_models\test_ml_models.py                                                   | Python           |         52 |          8 |          7 |         67 |
+| c:\Users\jyoti\emergecy\backend\tests\models\test_models.py                                                         | Python           |         68 |          4 |         14 |         86 |
+| c:\Users\jyoti\emergecy\backend\tests\services\test_analytics_service.py                                            | Python           |         41 |          5 |         10 |         56 |
+| c:\Users\jyoti\emergecy\backend\tests\services\test_auth_service.py                                                 | Python           |         51 |         11 |         19 |         81 |
+| c:\Users\jyoti\emergecy\backend\tests\services\test_emergency_service.py                                            | Python           |         72 |          7 |         11 |         90 |
+| c:\Users\jyoti\emergecy\backend\tests\services\test_geospatial_service.py                                           | Python           |         67 |         10 |         12 |         89 |
+| c:\Users\jyoti\emergecy\backend\tests\services\test_incident_service.py                                             | Python           |         91 |          8 |         15 |        114 |
+| c:\Users\jyoti\emergecy\backend\tests\services\test_ml_service.py                                                   | Python           |         40 |          5 |          5 |         50 |
+| c:\Users\jyoti\emergecy\backend\tests\services\test_prediction_service.py                                           | Python           |        109 |         11 |         19 |        139 |
+| c:\Users\jyoti\emergecy\backend\tests\services\test_user_service.py                                                 | Python           |         70 |          7 |         15 |         92 |
+| c:\Users\jyoti\emergecy\package-lock.json                                                                           | JSON             |        618 |          0 |          1 |        619 |
+| c:\Users\jyoti\emergecy\package.json                                                                                | JSON             |         11 |          0 |          1 |         12 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\.env                                                                     | Dotenv           |          3 |          0 |          0 |          3 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\README.md                                                                | Markdown         |         10 |          0 |          9 |         19 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\api.js.html                                                     | HTML             |        664 |          0 |         15 |        679 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\base.css                                                        | PostCSS          |        203 |          9 |         13 |        225 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\block-navigation.js                                             | JavaScript       |         66 |          7 |         15 |         88 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\coverage-final.json                                             | JSON             |          3 |          0 |          1 |          4 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\helpers.js.html                                                 | HTML             |        893 |          0 |         14 |        907 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\index.html                                                      | HTML             |        116 |          0 |         15 |        131 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\prettify.css                                                    | PostCSS          |          1 |          0 |          1 |          2 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\prettify.js                                                     | JavaScript       |          1 |          1 |          1 |          3 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\coverage\sorter.js                                                       | JavaScript       |        171 |         21 |         19 |        211 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\eslint.config.js                                                         | JavaScript       |         28 |          0 |          2 |         30 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\index.html                                                               | HTML             |         13 |          0 |          1 |         14 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\package-lock.json                                                        | JSON             |      6,299 |          0 |          1 |      6,300 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\package.json                                                             | JSON             |         67 |          0 |          1 |         68 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\postcss.config.cjs                                                       | JavaScript       |          6 |          0 |          1 |          7 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\public\vite.svg                                                          | XML              |          1 |          0 |          0 |          1 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\App.css                                                              | PostCSS          |         37 |          0 |          6 |         43 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\App.jsx                                                              | JavaScript JSX   |        175 |         10 |         22 |        207 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\assets\react.svg                                                     | XML              |          1 |          0 |          0 |          1 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\index.css                                                            | PostCSS          |         84 |          0 |         31 |        115 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\layouts\AuthLayout.jsx                                               | JavaScript JSX   |         27 |          0 |          8 |         35 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\layouts\DashboardLayout.jsx                                          | JavaScript JSX   |        130 |         13 |         21 |        164 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\lib\apiClient.js                                                     | JavaScript       |         10 |          0 |          4 |         14 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\main.jsx                                                             | JavaScript JSX   |         14 |          3 |          4 |         21 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\IncidentNotifications.jsx                      | JavaScript JSX   |        109 |         12 |         17 |        138 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\NotificationsBell.jsx                          | JavaScript JSX   |         27 |          3 |          4 |         34 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\NotificationsCenter.jsx                        | JavaScript JSX   |        176 |         13 |         25 |        214 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\NotificationsContext.jsx                       | JavaScript JSX   |        133 |          1 |         25 |        159 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\analytics\api\analyticsApi.js                                | JavaScript       |         15 |          1 |          4 |         20 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\analytics\pages\AnalyticsDashboardPage.jsx                   | JavaScript JSX   |        344 |         19 |         33 |        396 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\api\authApi.js                                          | JavaScript       |         26 |          3 |          6 |         35 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\AuthCard.jsx                                 | JavaScript JSX   |          7 |          1 |          0 |          8 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\LoginForm.jsx                                | JavaScript JSX   |        104 |          0 |          8 |        112 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\Logo.jsx                                     | JavaScript JSX   |         24 |          0 |          2 |         26 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\RegisterForm.jsx                             | JavaScript JSX   |        167 |          4 |         15 |        186 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\pages\LoginPage.jsx                                     | JavaScript JSX   |         13 |          0 |          1 |         14 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\pages\ProfilePage.jsx                                   | JavaScript JSX   |        108 |          2 |         13 |        123 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\pages\RegisterPage.jsx                                  | JavaScript JSX   |         13 |          0 |          4 |         17 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\users\api\usersApi.js                                   | JavaScript       |         17 |          4 |          5 |         26 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\common\pages\LandingPage.jsx                                 | JavaScript JSX   |        130 |          6 |         27 |        163 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\common\pages\NotFoundPage.jsx                                | JavaScript JSX   |         25 |          0 |          1 |         26 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\dashboard\pages\HomePage.jsx                                 | JavaScript JSX   |        259 |         18 |         37 |        314 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\emergency\api\emergencyApi.js                                | JavaScript       |         21 |          0 |          6 |         27 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\emergency\pages\EmergencyContactsPage.jsx                    | JavaScript JSX   |        231 |          8 |         23 |        262 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\emergency\pages\SosTriggerPage.jsx                           | JavaScript JSX   |        421 |         17 |         34 |        472 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\geospartial\api\geospatialApi.js                             | JavaScript       |        136 |         18 |         18 |        172 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\geospartial\components\GeospatialMap.jsx                     | JavaScript JSX   |        392 |         37 |         45 |        474 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\geospartial\pages\IncidentsMapPage.jsx                       | JavaScript JSX   |          5 |          1 |          2 |          8 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\geospartial\styles\map.css                                   | PostCSS          |         55 |          9 |         11 |         75 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incident-predictions\api\incidentPredictionsApi.js           | JavaScript       |         58 |          0 |          9 |         67 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incident-predictions\components\IncidentPredictionsPanel.jsx | JavaScript JSX   |        372 |          9 |         31 |        412 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\api\incidentsApi.js                                | JavaScript       |         54 |         11 |          8 |         73 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\components\IncidentForm.jsx                        | JavaScript JSX   |        298 |         17 |         29 |        344 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\components\IncidentMapWithFeatures.jsx             | JavaScript JSX   |        226 |         13 |         29 |        268 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentDetailPage.jsx                       | JavaScript JSX   |        287 |          8 |         30 |        325 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentMapPage.jsx                          | JavaScript JSX   |        177 |          6 |         19 |        202 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentsPage.jsx                            | JavaScript JSX   |        262 |          9 |         21 |        292 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentsRealtimeFeed.jsx                    | JavaScript JSX   |        155 |          6 |         17 |        178 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\NearbyIncidentsPage.jsx                      | JavaScript JSX   |        185 |          5 |         12 |        202 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\PredictionUtils.js                               | JavaScript       |         49 |          1 |          7 |         57 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\PredictionsPanel.jsx                             | JavaScript JSX   |        256 |         13 |         17 |        286 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\api\predictionsApi.js                            | JavaScript       |         37 |          1 |          8 |         46 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\useIncidentPredictions.js                        | JavaScript       |         61 |          1 |          6 |         68 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\api\preparednessApi.js                          | JavaScript       |         23 |          1 |          4 |         28 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\components\CreateGuidelineForm.jsx              | JavaScript JSX   |        213 |         16 |         34 |        263 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\pages\GuidelinesListPage.jsx                    | JavaScript JSX   |        272 |         14 |         23 |        309 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\pages\PersonalizedGuidelinesPage.jsx            | JavaScript JSX   |        292 |         16 |         25 |        333 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\realtime\components\AutoRefreshComponent.jsx                 | JavaScript JSX   |         27 |          1 |          5 |         33 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\realtime\components\RealtimeAlerts.jsx                       | JavaScript JSX   |         51 |          2 |          5 |         58 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\realtime\useIncidentsRealtime.js                             | JavaScript       |        110 |          2 |         35 |        147 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\resourcePredictions\ResourceDemandForm.jsx                   | JavaScript JSX   |        257 |         11 |         22 |        290 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\resourcePredictions\api\resourcePredictionApi.js             | JavaScript       |          6 |          0 |          3 |          9 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\tasks\api\taskApi.js                                         | JavaScript       |         41 |          5 |          6 |         52 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\tasks\components\IncidentTasksPanel.jsx                      | JavaScript JSX   |        347 |         17 |         37 |        401 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\tasks\pages\TasksPage.jsx                                    | JavaScript JSX   |        381 |         19 |         55 |        455 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\router\RequireAuth.jsx                                               | JavaScript JSX   |          9 |          1 |          3 |         13 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\router\index.jsx                                                     | JavaScript JSX   |         95 |          0 |         23 |        118 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_auth_module.jsx                                   | JavaScript JSX   |        120 |          4 |         32 |        156 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_dashboard_module.jsx                              | JavaScript JSX   |         45 |         12 |         16 |         73 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_emergency_module.jsx                              | JavaScript JSX   |        127 |          2 |         36 |        165 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_incident_module.jsx                               | JavaScript JSX   |         38 |          1 |          8 |         47 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_prediction_module.jsx                             | JavaScript JSX   |         30 |          1 |          4 |         35 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_realtime_module.jsx                               | JavaScript JSX   |         61 |          8 |         15 |         84 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\modules\test_task_module.jsx                                   | JavaScript JSX   |        143 |          2 |         43 |        188 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\setup.js                                                       | JavaScript       |         28 |          2 |          3 |         33 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\utils\api.test.js                                              | JavaScript       |        346 |          1 |        129 |        476 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\tests\utils\helpers.test.js                                          | JavaScript       |        310 |          1 |         63 |        374 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\utils\api.js                                                         | JavaScript       |        162 |          5 |         32 |        199 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\utils\fixLeafletIcons.js                                             | JavaScript       |          9 |          0 |          1 |         10 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\src\utils\helpers.js                                                     | JavaScript       |        222 |          3 |         50 |        275 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\tailwind.config.cjs                                                      | JavaScript       |         57 |          1 |          2 |         60 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\vite.config.js                                                           | JavaScript       |         20 |          0 |          3 |         23 |
+| c:\Users\jyoti\emergecy\safetrack-frontend\vitest.config.js                                                         | JavaScript       |         18 |          0 |          2 |         20 |
+| c:\Users\jyoti\emergecy\test_redis.py                                                                               | Python           |         14 |          0 |          3 |         17 |
+| Total                                                                                                               |                  |    114,045 |      1,051 |      3,224 |    118,320 |
++---------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+

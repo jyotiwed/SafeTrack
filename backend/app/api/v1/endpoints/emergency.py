@@ -29,7 +29,7 @@ async def get_emergency_contacts(
     db: AsyncSession = Depends(get_db),
     current_user: UserModel = Depends(get_current_user),
 ):
-    return await list_user_contacts(db, current_user.id)
+    return await list_user_contacts(db, current_user.id) 
 
 
 @router.post(
@@ -42,7 +42,7 @@ async def create_emergency_contact(
     db: AsyncSession = Depends(get_db),
     current_user: UserModel = Depends(get_current_user),
 ):
-    return await add_user_contact(db, current_user.id, contact_in)
+    return await add_user_contact(db, current_user.id, contact_in) 
 
 
 @router.post(
@@ -53,7 +53,7 @@ async def sos_trigger(
     req: EmergencyTriggerRequest,
     current_user: UserModel = Depends(get_current_user),
 ):
-    await trigger_emergency(current_user.id, req)
+    await trigger_emergency(current_user.id, req) 
     return {"status": "accepted"}
 
 @router.put(
@@ -82,6 +82,6 @@ async def delete_emergency_contact(
     db: AsyncSession = Depends(get_db),
     current_user: UserModel = Depends(get_current_user),
 ):
-    success = await delete_user_contact(db, contact_id, current_user.id)
+    success = await delete_user_contact(db, contact_id, current_user.id) 
     if not success:
         raise HTTPException(status_code=404, detail="Contact not found")

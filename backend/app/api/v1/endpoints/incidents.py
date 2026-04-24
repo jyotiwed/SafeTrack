@@ -2,12 +2,22 @@ from typing import List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.services.incident_service import list_incidents_near
+
+from app.services.incident_service import (
+    create_incident as service_create_incident,
+    list_incidents as service_list_incidents,
+    get_incident as service_get_incident,
+    update_incident as service_update_incident,
+    list_incidents_near,
+    IncidentNotFoundError,
+)
+
 from app.core.dependencies import (
     get_db,
     get_current_user,
     require_operational_roles,
 )
+
 from app.models.incident import IncidentStatusEnum
 from app.models.user import User as UserModel
 from app.schemas.incident import (
@@ -15,17 +25,13 @@ from app.schemas.incident import (
     IncidentUpdate,
     IncidentRead,
 )
-from app.services.incident_service import (
-    create_incident as service_create_incident,
-    list_incidents as service_list_incidents,
-    get_incident as service_get_incident,
-    update_incident as service_update_incident,
-    IncidentNotFoundError,
-)
 
 router = APIRouter(prefix="/incidents", tags=["incidents"])
 
 
+# =========================
+# CREATE INCIDENT
+# =========================
 @router.post(
     "",
     response_model=IncidentRead,
@@ -36,15 +42,17 @@ async def create_incident(
     db: AsyncSession = Depends(get_db),
     current_user: UserModel = Depends(get_current_user),
 ):
-    # Citizens and operational roles can report incidents; you can tighten this later.
     incident = await service_create_incident(
         db=db,
         incident_in=incident_in,
-        reporter_id=current_user.id, # type: ignore
+        reporter_id=current_user.id,  # type: ignore
     )
     return incident
 
 
+# =========================
+# LIST INCIDENTS
+# =========================
 @router.get(
     "",
     response_model=List[IncidentRead],
@@ -65,45 +73,10 @@ async def list_incidents(
     return incidents
 
 
-@router.get(
-    "/{incident_id}",
-    response_model=IncidentRead,
-    dependencies=[Depends(require_operational_roles())],
-)
-async def get_incident(
-    incident_id: int,
-    db: AsyncSession = Depends(get_db),
-):
-    try:
-        incident = await service_get_incident(db, incident_id)
-    except IncidentNotFoundError as e:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=str(e),
-        )
-    return incident
-
-
-@router.patch(
-    "/{incident_id}",
-    response_model=IncidentRead,
-    dependencies=[Depends(require_operational_roles())],
-)
-async def update_incident(
-    incident_id: int,
-    incident_in: IncidentUpdate,
-    db: AsyncSession = Depends(get_db),
-):
-    try:
-        incident = await service_update_incident(db, incident_id, incident_in)
-    except IncidentNotFoundError as e:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=str(e),
-        )
-    return incident
-
-
+# =========================
+# LIST NEARBY INCIDENTS
+# ⚠ MUST BE BEFORE /{incident_id}
+# =========================
 @router.get(
     "/nearby",
     response_model=List[IncidentRead],
@@ -125,3 +98,46 @@ async def list_nearby_incidents(
         offset=offset,
     )
     return incidents
+
+
+# =========================
+# GET INCIDENT BY ID
+# =========================
+@router.get(
+    "/{incident_id}",
+    response_model=IncidentRead,
+    dependencies=[Depends(require_operational_roles())],
+)
+async def get_incident(
+    incident_id: int,
+    db: AsyncSession = Depends(get_db),
+):
+    try:
+        incident = await service_get_incident(db, incident_id)
+    except IncidentNotFoundError as e:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(e),
+        )
+    return incident
+
+
+
+@router.patch(
+    "/{incident_id}",
+    response_model=IncidentRead,
+    dependencies=[Depends(require_operational_roles())],
+)
+async def update_incident(
+    incident_id: int,
+    incident_in: IncidentUpdate,
+    db: AsyncSession = Depends(get_db),
+):
+    try:
+        incident = await service_update_incident(db, incident_id, incident_in)
+    except IncidentNotFoundError as e:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(e),
+        )
+    return incident

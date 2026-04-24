@@ -5,9 +5,9 @@ import joblib
 import numpy as np
 
 from app.schemas.incident_prediction import (
-    IncidentSeverityRequest,
-    IncidentSeverityResponse,
-    SeverityLevel,
+    IncidentSeverityRequest, # type: ignore
+    IncidentSeverityResponse, # type: ignore
+    SeverityLevel, # type: ignore
 )
 
 
@@ -61,7 +61,7 @@ def predict_incident_severity(
         probs = np.array([0.25, 0.25, 0.25, 0.25])
 
     prob_dict = {str(c): float(p) for c, p in zip(classes, probs)}
-    best = max(prob_dict, key=prob_dict.get)
+    best = max(prob_dict, key=prob_dict.get) # type: ignore
     severity = SeverityLevel(best)
 
     return IncidentSeverityResponse(

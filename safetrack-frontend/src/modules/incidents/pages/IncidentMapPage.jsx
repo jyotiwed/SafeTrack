@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Filter, AlertCircle, ChevronRight, Loader2, MapPin, Calendar } from "lucide-react";
 import IncidentForm from "../components/IncidentForm";
 import { listIncidents } from "../api/incidentsApi.js";
+import "../../geospartial/api/geospatialApi.js"; // for fixLeafletIcons side effect
 
 const STATUS_OPTIONS = [
   { value: "all", label: "All statuses" },

@@ -1,0 +1,28 @@
+"filename", "language", "JavaScript JSX", "JavaScript", "Python", "comment", "blank", "total"
+"c:\Users\jyoti\emergecy\backend\app\api\v1\api_router.py", "Python", 0, 0, 0, 0, 2, 2
+"c:\Users\jyoti\emergecy\backend\app\core\config.py", "Python", 0, 0, 0, 0, 1, 1
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_incident_prediction_crud.py", "Python", 0, 0, 0, -2, 1, -1
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_prediction_crud.py", "Python", 0, 0, 0, -2, 1, -1
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_task_crud.py", "Python", 0, 0, 0, -3, 2, -1
+"c:\Users\jyoti\emergecy\backend\tests\crud\test_user_crud.py", "Python", 0, 0, 0, -2, 1, -1
+"c:\Users\jyoti\emergecy\backend\tests\integration_testing\conftest.py", "Python", 0, 0, 0, -1, 1, 0
+"c:\Users\jyoti\emergecy\backend\tests\ml_models\test_ml_models.py", "Python", 0, 0, 0, -1, 1, 0
+"c:\Users\jyoti\emergecy\backend\tests\services\test_analytics_service.py", "Python", 0, 0, -1, 0, 0, -1
+"c:\Users\jyoti\emergecy\backend\tests\services\test_emergency_service.py", "Python", 0, 0, -1, -2, 2, -1
+"c:\Users\jyoti\emergecy\backend\tests\services\test_geospatial_service.py", "Python", 0, 0, 0, -3, 2, -1
+"c:\Users\jyoti\emergecy\backend\tests\services\test_incident_service.py", "Python", 0, 0, 0, -1, 1, 0
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\layouts\AuthLayout.jsx", "JavaScript JSX", 21, 0, 0, 5, 7, 33
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\layouts\DashboardLayout.jsx", "JavaScript JSX", 20, 0, 0, 0, 1, 21
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\Notifications\IncidentNotifications.jsx", "JavaScript JSX", 0, 0, 0, -1, 1, 0
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\analytics\pages\AnalyticsDashboardPage.jsx", "JavaScript JSX", 0, 0, 0, -19, -2, -21
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\api\emailApi.js", "JavaScript", 0, 10, 0, 1, 3, 14
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\auth\components\RegisterForm.jsx", "JavaScript JSX", 140, 0, 0, -3, 13, 150
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\dashboard\pages\HomePage.jsx", "JavaScript JSX", 244, 0, 0, 20, 12, 276
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentDetailPage.jsx", "JavaScript JSX", 2, 0, 0, 0, 3, 5
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\incidents\pages\IncidentsPage.jsx", "JavaScript JSX", 19, 0, 0, 0, 5, 24
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\predictions\PredictionsPanel.jsx", "JavaScript JSX", 0, 0, 0, -5, 1, -4
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\pages\GuidelinesListPage.jsx", "JavaScript JSX", 10, 0, 0, -2, 4, 12
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\preparedness\pages\PersonalizedGuidelinesPage.jsx", "JavaScript JSX", 37, 0, 0, -3, 0, 34
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\tasks\api\taskApi.js", "JavaScript", 0, 0, 0, -5, 5, 0
+"c:\Users\jyoti\emergecy\safetrack-frontend\src\modules\tasks\components\IncidentTasksPanel.jsx", "JavaScript JSX", 25, 0, 0, 6, 0, 31
+"Total", "-", 518, 10, -2, -23, 68, 571

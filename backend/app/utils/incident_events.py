@@ -1,7 +1,7 @@
 # app/utils/incident_events.py
 import json
 from typing import Any
-from app.core.redis import redis_client
+from app.core import redis as core_redis
 
 INCIDENT_CHANNEL = "incidents:public"
 
@@ -19,10 +19,10 @@ def _incident_to_payload(incident: Any) -> dict:
     }
 
 async def broadcast_incident_created(incident: Any) -> None:
-    if redis_client is None:
+    if core_redis.redis_client is None:
         return
     payload = _incident_to_payload(incident)
     try:
-        await redis_client.publish(INCIDENT_CHANNEL, json.dumps(payload))
+        await core_redis.redis_client.publish(INCIDENT_CHANNEL, json.dumps(payload))
     except Exception:
         return

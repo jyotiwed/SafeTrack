@@ -109,3 +109,36 @@ async def get_incident_timeline(
         current += timedelta(days=1)
 
     return IncidentTimelineResponse(buckets=buckets)
+
+# analytics_service.py
+from typing import Dict, Any
+from sqlalchemy.ext.asyncio import AsyncSession
+
+class AnalyticsService:
+    """
+    Lightweight analytics wrapper. Inject dependencies (prediction_crud, incident_crud, etc.).
+    """
+
+    def __init__(self, db: AsyncSession, prediction_crud=None, incident_crud=None):
+        self.db = db
+        self.prediction_crud = prediction_crud
+        self.incident_crud = incident_crud
+
+    async def risk_summary(self, location: str) -> Dict[str, Any]:
+        preds = []
+        if self.prediction_crud:
+            preds = await self.prediction_crud.list_by_location(self.db, location=location)
+        incidents = []
+        if self.incident_crud:
+            incidents = await self.incident_crud.list_by_location(self.db, location=location)
+        # return a simple aggregated summary
+        return {
+            "location": location,
+            "predictions_count": len(preds),
+            "incidents_count": len(incidents),
+        }
+
+    async def top_risks(self, limit: int = 5):
+        if not self.prediction_crud:
+            raise RuntimeError("prediction_crud required")
+        return await self.prediction_crud.top_risks(self.db, limit=limit)

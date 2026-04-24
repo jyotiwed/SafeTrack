@@ -7,19 +7,18 @@ export async function fetchUsers({ role, limit = 50, offset = 0 } = {}) {
   params.offset = offset;
 
   const { data } = await apiClient.get("/users", { params });
-  // [{ id, full_name, role }]
+
   return data;
 }
 
 export async function fetchUserById(userId) {
   const { data } = await apiClient.get(`/users/${userId}`);
-  // { id, full_name, role }
+
   return data;
 }
 
 export async function adminUpdateUser(userId, payload) {
-  // payload: { full_name?, role?, is_active? }
+
   const { data } = await apiClient.patch(`/users/${userId}`, payload);
-  // { email, full_name, role, id, is_active }
   return data;
 }

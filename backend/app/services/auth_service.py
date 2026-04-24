@@ -74,3 +74,44 @@ async def get_current_active_admin(db: AsyncSession, user_id: int):
     if user.role != "admin":  # type: ignore[attr-defined]
         raise InvalidCredentialsError("User is not an admin")
     return user
+
+# auth_service.py
+from typing import Optional
+from sqlalchemy.ext.asyncio import AsyncSession
+
+class AuthService:
+    """
+    Minimal auth service. Inject `user_crud` with `create`, `get_by_email`, `verify_password`.
+    """
+
+    def __init__(self, db: AsyncSession, user_crud=None, password_hasher=None):
+        self.db = db
+        self.user_crud = user_crud
+        self.password_hasher = password_hasher
+
+    async def create_user(self, user_in):
+        if not self.user_crud:
+            raise RuntimeError("user_crud must be provided")
+        # Hash password if hasher supplied
+        if self.password_hasher and hasattr(user_in, "password"):
+            user_in.password = self.password_hasher.hash(user_in.password)
+        return await self.user_crud.create(self.db, obj_in=user_in)
+
+    async def authenticate(self, email: str, password: str) -> Optional[object]:
+        if not self.user_crud:
+            raise RuntimeError("user_crud must be provided")
+        user = await self.user_crud.get_by_email(self.db, email=email)
+        if not user:
+            return None
+        if self.password_hasher:
+            ok = self.password_hasher.verify(user.password, password)
+        else:
+            ok = getattr(user, "password", None) == password
+        return user if ok else None
+
+    async def change_password(self, user_id: int, new_password: str):
+        if not self.user_crud:
+            raise RuntimeError("user_crud must be provided")
+        if self.password_hasher:
+            new_password = self.password_hasher.hash(new_password)
+        return await self.user_crud.update_password(self.db, user_id, new_password)

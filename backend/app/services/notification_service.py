@@ -1,10 +1,16 @@
 
 import json
+import logging
 from typing import Any
 
-from app.core.redis import redis_client
+
+
+
+from app.core import redis as core_redis
 
 INCIDENT_CHANNEL = "incidents:public"
+
+logger = logging.getLogger(__name__)
 
 
 def _incident_to_payload(incident: Any) -> dict:
@@ -30,15 +36,16 @@ def _incident_to_payload(incident: Any) -> dict:
         "created_at": incident.created_at.isoformat(),
     }
 
-
 async def broadcast_incident_created(incident: Any) -> None:
-    if redis_client is None:
+    payload = _incident_to_payload(incident)
+
+    if core_redis.redis_client is None:
+        logger.warning("Redis unavailable. Queuing or dropping incident %s", getattr(incident, "id", "<no-id>"))
         return
 
-    payload = _incident_to_payload(incident)
     try:
-        await redis_client.publish(INCIDENT_CHANNEL, json.dumps(payload))
-    except Exception:
+        await core_redis.redis_client.publish(INCIDENT_CHANNEL, json.dumps(payload))
+        logger.debug("Published incident %s to channel %s", payload.get("id"), INCIDENT_CHANNEL)
+    except Exception as e:
+        logger.error("Failed to publish incident %s: %s", getattr(incident, "id", "<no-id>"), e, exc_info=True)
         return
-    
-    

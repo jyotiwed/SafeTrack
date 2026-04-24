@@ -8,7 +8,7 @@ class MapPoint(BaseModel):
     id: int
     latitude: float = Field(ge=-90.0, le=90.0)
     longitude: float = Field(ge=-180.0, le=180.0)
-    type: str  # e.g. "incident", "task"
+    type: str  
     properties: Dict[str, Any]
 
 
@@ -17,5 +17,4 @@ class Cluster(BaseModel):
     latitude: float
     longitude: float
     count: int
-    points: Optional[List[MapPoint]] = None  # optional preview points
-# if count is small enough  
+    points: Optional[List[MapPoint]] = None  

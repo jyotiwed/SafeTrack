@@ -111,3 +111,32 @@ async def count_predictions_by_incident(
         select(Prediction).where(Prediction.incident_id == incident_id)
     )
     return len(result.scalars().all())
+
+class CRUDPrediction:
+    """CRUD class for Prediction model"""
+    
+    def __init__(self, model):
+        self.model = model
+    
+    async def create(self, db: AsyncSession, obj_in: PredictionCreate) -> Prediction:
+        """Create a new prediction"""
+        return await create_prediction(db, obj_in)
+    
+    async def get(self, db: AsyncSession, id: int) -> Optional[Prediction]:
+        """Get prediction by ID"""
+        return await get_prediction(db, id)
+    
+    async def update(self, db: AsyncSession, db_obj: Prediction, obj_in: PredictionUpdate) -> Optional[Prediction]:
+        """Update prediction"""
+        pred_id = db_obj.id if isinstance(db_obj.id, int) else int(str(db_obj.id))
+        return await update_prediction(db, pred_id, obj_in)
+    
+    async def remove(self, db: AsyncSession, id: int) -> bool:
+        """Delete prediction"""
+        return await delete_prediction(db, id)
+    
+    async def get_multi(self, db: AsyncSession, skip: int = 0, limit: int = 50) -> List[Prediction]:
+        """Get multiple predictions"""
+        result = await db.execute(select(Prediction).offset(skip).limit(limit))
+        return list(result.scalars().all())
+

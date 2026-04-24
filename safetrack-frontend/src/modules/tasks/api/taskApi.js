@@ -1,7 +1,7 @@
-// src/modules/tasks/api/taskApi.js
+
 import apiClient from "../../../lib/apiClient";
 
-// Create task
+
 export async function createTask({
   title,
   description,
@@ -18,10 +18,10 @@ export async function createTask({
     assignee_id: assignee_id ?? null,
     extra_data: extra_data ?? null,
   });
-  return data; // TaskRead
+  return data; 
 }
 
-// List tasks (with filters)
+
 export async function listTasks({
   limit = 50,
   offset = 0,
@@ -38,14 +38,14 @@ export async function listTasks({
   return data;
 }
 
-// Get single task
+
 export async function getTask(taskId) {
   const { data } = await apiClient.get(`/tasks/${taskId}`);
-  return data; // TaskRead
+  return data; 
 }
 
-// Update task
+
 export async function updateTask(taskId, partial) {
   const { data } = await apiClient.patch(`/tasks/${taskId}`, partial);
-  return data; // TaskRead
+  return data; 
 }

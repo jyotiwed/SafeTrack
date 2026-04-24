@@ -39,10 +39,10 @@ async def update_me(
     db: AsyncSession = Depends(get_db),
     current_user: UserModel = Depends(get_current_user),
 ):
-    # Citizens/volunteers can only edit their own name; ignore role/is_active if provided.
+    
     safe_update = UserUpdate(
         full_name=user_in.full_name,
-        # ignore role/is_active from body for non-admins
+        
     )
     updated = await update_user_profile(db, current_user, safe_update)
     return updated

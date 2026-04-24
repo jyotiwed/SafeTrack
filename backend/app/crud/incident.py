@@ -80,9 +80,9 @@ async def update_incident(
         db_obj.description = incident_in.description  # type: ignore
     if incident_in.severity is not None:
         db_obj.severity = incident_in.severity.value # type: ignore
-        db_obj.severity = incident_in.severity.value  # type: ignore
+        db_obj.severity = incident_in.severity.value# type: ignore
     if incident_in.status is not None:
-        db_obj.status = incident_in.status.value  # type: ignore
+        db_obj.status = incident_in.status  # type: ignore
     if incident_in.address is not None:
         db_obj.address = incident_in.address  # type: ignore
 
@@ -121,7 +121,7 @@ async def list_incidents_near_location(
         select(Incident)
         .where(
             func.ST_DWithin(
-                Incident.location.cast(Geometry("POINT", srid=4326)).cast("geography"),
+                Incident.location.cast(Geometry("POINT", srid=4326)).cast("geography"), # type: ignore
                 ref_point.cast("geography"),
                 radius_meters,
             )
@@ -132,3 +132,35 @@ async def list_incidents_near_location(
     )
     result = await db.execute(stmt)
     return list(result.scalars().all())
+
+async def delete_incident(db: AsyncSession, incident_id: int) -> None:
+    incident = await get_incident_by_id(db, incident_id)
+    if incident:
+        await db.delete(incident)
+        await db.commit()
+
+class CRUDIncident:
+    """CRUD class for Incident model"""
+    
+    def __init__(self, model):
+        self.model = model
+    
+    async def create(self, db: AsyncSession, obj_in: IncidentCreate, reporter_id: int = None, **kwargs) -> Incident: # type: ignore
+        """Create a new incident"""
+        return await create_incident(db, obj_in, reporter_id or 1)
+    
+    async def get(self, db: AsyncSession, id: int) -> Optional[Incident]:
+        """Get incident by ID"""
+        return await get_incident_by_id(db, id)
+    
+    async def update(self, db: AsyncSession, db_obj: Incident, obj_in: IncidentUpdate) -> Incident:
+        """Update incident"""
+        return await update_incident(db, db_obj, obj_in)
+    
+    async def remove(self, db: AsyncSession, id: int) -> None:
+        """Delete incident"""
+        return await delete_incident(db, id)
+    
+    async def get_multi(self, db: AsyncSession, skip: int = 0, limit: int = 50) -> List[Incident]:
+        """Get multiple incidents"""
+        return await list_incidents(db, limit=limit, offset=skip)

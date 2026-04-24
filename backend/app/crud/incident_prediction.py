@@ -167,3 +167,31 @@ async def get_resource_forecast_summary(
         "average_risk_score": avg_risk_score,
         "most_severe_prediction": max(p.predicted_severity for p in predictions),
     }
+
+class CRUDIncidentPrediction:
+    """CRUD class for IncidentPrediction model"""
+    
+    def __init__(self, model):
+        self.model = model
+    
+    async def create(self, db: AsyncSession, obj_in: IncidentPredictionCreate) -> IncidentPrediction:
+        """Create a new incident prediction"""
+        return await create_incident_prediction(db, obj_in)
+    
+    async def get(self, db: AsyncSession, id: int) -> Optional[IncidentPrediction]:
+        """Get incident prediction by ID"""
+        return await get_incident_prediction(db, id)
+    
+    async def update(self, db: AsyncSession, db_obj: IncidentPrediction, obj_in: IncidentPredictionUpdate) -> Optional[IncidentPrediction]:
+        """Update incident prediction"""
+        pred_id = db_obj.id if isinstance(db_obj.id, int) else int(str(db_obj.id))
+        return await update_incident_prediction(db, pred_id, obj_in)
+    
+    async def remove(self, db: AsyncSession, id: int) -> bool:
+        """Delete incident prediction"""
+        return await delete_incident_prediction(db, id)
+    
+    async def get_multi(self, db: AsyncSession, skip: int = 0, limit: int = 50) -> List[IncidentPrediction]:
+        """Get multiple incident predictions"""
+        result = await db.execute(select(IncidentPrediction).offset(skip).limit(limit))
+        return list(result.scalars().all())
