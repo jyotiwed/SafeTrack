@@ -149,4 +149,4 @@ npm run test
 
 ## License
 
-This project is provided without an explicit license. Add a `LICENSE` file if you want to specify usage terms.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
